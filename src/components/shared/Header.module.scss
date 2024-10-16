@@ -1,0 +1,298 @@
+@use "../../styles/color.scss" as color;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  height: 75px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  padding: 10px 20px 0px 20px;
+  backdrop-filter: blur(5px);
+}
+
+.burgerButton {
+  border: none;
+  background: none;
+  font-size: 30px;
+  cursor: pointer;
+  user-select: none;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20vh;
+  background-color: color.$black;
+  color: color.$white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-200%);
+  transition: transform 0.5s ease;
+  z-index: 30;
+}
+
+.menuOpen {
+  transform: translateY(0);
+}
+
+.menuContent {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  width: 100%;
+}
+
+.menuItem {
+  /* padding: 10px 20px; */
+  font-size: 95px;
+  font-weight: 600;
+
+  color: color.$white;
+  cursor: pointer;
+  /* border-right: 3px solid color.$white; */
+  background-color: transparent;
+  text-decoration: none;
+  &:hover {
+    color: color.$hover;
+  }
+
+  &:focus {
+    outline: none;
+    color: color.$focus;
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 50px;
+  font-weight: 800;
+  color: color.$white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transition: transform 0.3s ease;
+    transform: scale(0.9);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.svg_menu {
+  width: 50px;
+}
+
+/*  */
+
+.svg {
+  height: 50px;
+
+  /* Общие стили для всех <path> */
+  > path {
+    transition: transform 0.4s ease; /* Плавный переход */
+    transform-box: fill-box; /* Корректная трансформация относительно элементов */
+  }
+
+  /* Указываем явные начальные состояния для всех элементов */
+  .slider__left__upper,
+  .slider__right__upper,
+  .slider__middle__upper {
+    transform-origin: top;
+    transform: scaleY(1);
+  }
+
+  .slider__left__center,
+  .slider__right__center,
+  .slider__middle__center {
+    transform: translateY(0);
+  }
+
+  .slider__left__lower,
+  .slider__right__lower,
+  .slider__middle__lower {
+    transform-origin: bottom;
+    transform: scaleY(1);
+  }
+
+  /* Стили для состояния hover */
+  &:hover {
+    .slider__left__upper,
+    .slider__right__upper {
+      transform: scaleY(0.5);
+    }
+
+    .slider__left__center,
+    .slider__right__center {
+      transform: translateY(-50px);
+    }
+
+    .slider__left__lower,
+    .slider__right__lower {
+      transform: scaleY(2);
+    }
+
+    .slider__middle__upper {
+      transform: scaleY(2);
+    }
+
+    .slider__middle__center {
+      transform: translateY(50px);
+    }
+
+    .slider__middle__lower {
+      transform: scaleY(0.5);
+    }
+  }
+
+  /* Стили для состояния active */
+  &:active {
+    .slider__left__upper,
+    .slider__right__upper {
+      transform: scaleY(0.5);
+    }
+
+    .slider__left__center,
+    .slider__right__center {
+      transform: translateY(-50px);
+    }
+
+    .slider__left__lower,
+    .slider__right__lower {
+      transform: scaleY(2);
+    }
+
+    .slider__middle__upper {
+      transform: scaleY(2);
+    }
+
+    .slider__middle__center {
+      transform: translateY(50px);
+    }
+
+    .slider__middle__lower {
+      transform: scaleY(0.5);
+    }
+  }
+}
+
+.address {
+  font-size: 24px;
+  font-weight: normal;
+  white-space: nowrap;
+  position: relative;
+  color: color.$white;
+}
+/* @media (max-width: 1280px) {
+  .address {
+    font-size: 18px;
+    font-weight: normal;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .svg {
+    height: 25px;
+  }
+} */
+
+@media screen and (max-width: 480px) {
+  .header {
+    height: 10px;
+    padding: 0px 0px 0px 10px;
+    backdrop-filter: blur(2px);
+  }
+
+  .address {
+    font-size: 12px;
+    font-weight: normal;
+    white-space: nowrap;
+    position: relative;
+    padding-top: 15px;
+  }
+  .svg {
+    height: 25px;
+  }
+  .menuItem {
+    /* padding: 10px 20px; */
+    font-size: 25px;
+    font-weight: 600;
+
+    color: color.$white;
+    cursor: pointer;
+
+    background-color: transparent;
+    text-decoration: none;
+    &:hover {
+      color: color.$hover;
+    }
+
+    &:focus {
+      outline: none;
+      color: color.$focus;
+    }
+  }
+  .burgerButton {
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+    user-select: none;
+    padding: 10px;
+    transition: transform 0.3s ease;
+  }
+  .closeButton {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    font-size: 30px;
+    font-weight: 800;
+    color: color.$white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transition: transform 0.3s ease;
+      transform: scale(0.9);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    background-color: color.$black;
+    color: color.$white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-200%);
+    transition: transform 0.5s ease;
+    z-index: 30;
+  }
+
+  .menuOpen {
+    transform: translateY(0);
+  }
+}

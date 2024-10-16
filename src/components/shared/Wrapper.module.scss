@@ -1,0 +1,155 @@
+@use "../../styles/color.scss" as color;
+
+.container {
+  width: fit-content;
+  margin: 0 auto;
+  grid-gap: 20px;
+  display: grid;
+  grid-auto-flow: column;
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+.container_item {
+  object-fit: contain;
+  cursor: pointer;
+}
+
+/* Стиль для основного содержимого */
+.info {
+  position: relative;
+  transition: filter 0.3s ease;
+}
+
+.blurred {
+  filter: blur(10px);
+}
+
+/* Обертка для контейнера */
+.wrapper {
+  width: 100%;
+  -webkit-transform: translateX(-10%);
+  transform: translateX(-10%);
+}
+
+.container_item {
+  flex: 0 0 37%; /* Каждый элемент занимает 30% экрана */
+  cursor: pointer;
+}
+
+.container_item_image {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+}
+
+/* Контролы для кнопок */
+.controls {
+  display: flex;
+  justify-content: flex-start;
+  margin: 20px 0 40px 0;
+
+  gap: 20px;
+}
+.modal_img {
+  width: 100%;
+  border-radius: 32px;
+}
+.but {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: 800;
+  cursor: pointer;
+  width: 70px;
+  color: color.$white;
+  background-color: transparent;
+  height: 70px;
+  padding: 20px;
+  border-radius: 50%;
+  border: 3px solid color.$white;
+}
+
+.but:disabled {
+  opacity: 0.35;
+  cursor: auto;
+  pointer-events: none;
+}
+
+/* Модальное окно */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal_content {
+  width: 1630px;
+  height: 800px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 60px;
+  left: 1675px;
+  background: none;
+  border: 3px solid color.$white;
+  border-radius: 16px;
+  padding: 10px;
+  width: 60px;
+  height: 60px;
+  color: color.$white;
+  font-size: 60px;
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  font-size: 24px;
+  &:hover {
+    transition: 0.3s;
+    transform: scale(0.9);
+  }
+}
+@media screen and (max-width: 480px) {
+  .container_item_image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+  .wrapper {
+    width: 100%;
+  }
+  .but {
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    background-color: #ddd;
+    padding: 20px;
+    border-radius: 50%;
+    border: 3px solid color.$white;
+  }
+  .container_item {
+    width: 100px;
+    cursor: pointer;
+  }
+}
+@media screen and (max-width: 390px) {
+  .modal_content {
+    width: 90%;
+    height: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+  }
+}

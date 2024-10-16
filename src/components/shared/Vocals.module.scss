@@ -1,0 +1,73 @@
+@use "../../styles/color.scss" as color;
+
+.content {
+  background: #191919;
+  padding: 60px;
+  color: color.$white;
+  border-radius: 26px;
+  width: 1630px;
+}
+.title {
+  font-size: 60px;
+  font-weight: 800;
+}
+.desc {
+  font-size: 26px;
+  font-weight: 700;
+}
+.desc_li {
+  list-style: disc;
+  font-size: 22px;
+  color: color.$white;
+}
+.price {
+  background-color: color.$white;
+  width: auto;
+  color: color.$black;
+  font-weight: 800;
+  font-size: 80px;
+  border-radius: 30px;
+  height: auto;
+  padding: 5px 20px 5px 20px;
+}
+.white {
+  background-color: color.$black;
+  border: 3px solid color.$white;
+  color: color.$white;
+}
+.list {
+  padding: 20px 0px 20px 40px;
+  border-radius: 30px;
+  border: 3px solid color.$white;
+}
+.link_social {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: flex-end;
+  align-items: center;
+}
+.side {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+}
+.right {
+  text-align: right;
+}
+.money {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.text {
+  width: auto;
+}
+.number {
+  font-size: 80px;
+}
+.phone {
+  font-size: 44px;
+}

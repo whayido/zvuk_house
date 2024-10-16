@@ -1,0 +1,86 @@
+@use "../../styles/color.scss" as color;
+.title {
+  font-size: 70px;
+  font-weight: 800;
+  text-align: center;
+  white-space: nowrap;
+}
+.house {
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  width: 305px;
+  line-height: 0.65;
+  background-color: color.$black;
+  color: color.$white;
+}
+.music {
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  width: 305px;
+  line-height: 0.1;
+  background-color: color.$black;
+  color: color.$white;
+}
+.content {
+  background: #191919;
+  padding: 60px;
+  color: color.$white;
+  border-radius: 26px;
+  width: 1630px;
+}
+
+.desc {
+  font-weight: 700;
+  font-size: 32px;
+  text-align: center;
+}
+.desc_right {
+  font-weight: 700;
+  font-size: 30px;
+  text-align: left;
+}
+.left {
+  padding: 20px;
+  background-color: color.$white;
+  border-radius: 32px;
+  height: 700px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  color: color.$black;
+}
+.container {
+  font-weight: 700;
+  padding: 30px;
+  background-color: color.$white;
+  border-radius: 32px;
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: color.$black;
+}
+.aside {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.side {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}

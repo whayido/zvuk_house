@@ -1,0 +1,48 @@
+@use "../styles/color.scss" as color;
+
+.main {
+  background-image: url("../../public/img/Background/not-found.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  color: color.$white;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 60px;
+  padding: 0 0 0 60px;
+}
+.title {
+  font-size: 310px;
+  font-weight: 800;
+  line-height: 0.9;
+}
+.desc {
+  font-size: 46px;
+  font-weight: 800;
+}
+@media screen and (max-width: 480px) {
+  .main {
+    background-image: url("../../public/img/Background/not-found_mobile.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 800px;
+    color: color.$white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+  .title {
+    font-size: 170px;
+    font-weight: 800;
+    line-height: 0.9;
+  }
+  .desc {
+    font-size: 26px;
+    font-weight: 800;
+  }
+}
