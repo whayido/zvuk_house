@@ -9,7 +9,7 @@ export default function Mixing() {
         <div className={styles.side}>
           <div className={styles.text}>
             <p className={styles.desc}>
-              Студия звукозаписи "Звук Хаус" приглашает
+              Студия звукозаписи Звук Хаус приглашает
               <br /> всех, кто мечтает овладеть искусством вокала, на
               профессиональные уроки.
             </p>

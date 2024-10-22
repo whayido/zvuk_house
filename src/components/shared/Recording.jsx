@@ -9,7 +9,7 @@ export default function Recording() {
         <div className={styles.side}>
           <div className={styles.text}>
             <p className={styles.desc}>
-              Студия звукозаписи "Звук Хаус" предлагает
+              Студия звукозаписи Звук Хаус предлагает
               <br /> услуги профессиональной записи песен
               <br /> в высококачественных условиях.
             </p>
@@ -85,8 +85,6 @@ export default function Recording() {
             +7(913) 530-57-90
           </a>
         </nav>
-
-        {/* <button className={styles.closeBtn}></button> */}
       </main>
     </>
   );
