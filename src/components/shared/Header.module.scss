@@ -3,6 +3,7 @@
 .header {
   display: flex;
   justify-content: space-between;
+  /* align-items: center; */
   position: fixed;
   height: 75px;
   top: 0;
@@ -11,6 +12,7 @@
   z-index: 3;
   padding: 10px 20px 0px 20px;
   backdrop-filter: blur(5px);
+  border-bottom: 1px solid color.$white;
 }
 
 .burgerButton {
@@ -52,17 +54,17 @@
 }
 
 .menuItem {
-  /* padding: 10px 20px; */
-  font-size: 95px;
-  font-weight: 600;
-
+  font-size: 130px;
+  font-weight: 800;
+  border-right: 3px solid color.$white;
   color: color.$white;
   cursor: pointer;
-  /* border-right: 3px solid color.$white; */
-  background-color: transparent;
+
+  background-color: color.$black;
   text-decoration: none;
   &:hover {
-    color: color.$hover;
+    background-color: color.$white;
+    color: color.$black;
   }
 
   &:focus {
@@ -97,18 +99,14 @@
   width: 50px;
 }
 
-/*  */
-
 .svg {
   height: 50px;
 
-  /* Общие стили для всех <path> */
   > path {
-    transition: transform 0.4s ease; /* Плавный переход */
-    transform-box: fill-box; /* Корректная трансформация относительно элементов */
+    transition: transform 0.4s ease;
+    transform-box: fill-box;
   }
 
-  /* Указываем явные начальные состояния для всех элементов */
   .slider__left__upper,
   .slider__right__upper,
   .slider__middle__upper {
@@ -129,7 +127,6 @@
     transform: scaleY(1);
   }
 
-  /* Стили для состояния hover */
   &:hover {
     .slider__left__upper,
     .slider__right__upper {
@@ -159,7 +156,6 @@
     }
   }
 
-  /* Стили для состояния active */
   &:active {
     .slider__left__upper,
     .slider__right__upper {
@@ -197,18 +193,6 @@
   position: relative;
   color: color.$white;
 }
-/* @media (max-width: 1280px) {
-  .address {
-    font-size: 18px;
-    font-weight: normal;
-    white-space: nowrap;
-    position: relative;
-  }
-
-  .svg {
-    height: 25px;
-  }
-} */
 
 @media screen and (max-width: 480px) {
   .header {

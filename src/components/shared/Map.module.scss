@@ -1,0 +1,80 @@
+@use "../../styles/color.scss" as color;
+
+.map {
+  width: 100%;
+  background-image: url("/public/img/Background/zx2.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: color.$black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.map_center {
+  width: 1630px;
+}
+.desc_map {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.map_map {
+  border-radius: 32px;
+  margin-top: 60px;
+}
+.desc {
+  font-weight: 800;
+  font-size: 32px;
+}
+.link_map {
+  color: color.$black;
+  background-color: color.$white;
+}
+.address {
+  color: color.$white;
+  font-size: 32px;
+  position: relative;
+  float: right;
+  font-weight: 800;
+}
+.heading {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+  font-weight: 800;
+  background-color: color.$white;
+  color: color.$black;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+@media screen and (max-width: 390px) {
+  .map {
+    width: 100vw;
+    background-image: url("/public/img/Background/zx2.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: color.$black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .map_center {
+    width: 100%;
+  }
+  .map_map {
+    width: 100vw;
+  }
+  .address {
+    color: color.$white;
+    font-size: 14px;
+    position: relative;
+    float: right;
+    font-weight: 800;
+  }
+}

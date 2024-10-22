@@ -33,7 +33,7 @@
   padding-left: 15px;
   padding-right: 15px;
   transition: 0.3s;
-  background-color: color.$black;
+  background-color: color.$none;
   color: color.$white;
   grid-column: 6 / 6;
   grid-row: 5 / 5;
@@ -167,7 +167,6 @@
     padding-left: 15px;
     padding-right: 15px;
     transition: 0.3s;
-    background-color: color.$black;
     color: color.$white;
     grid-column: 6 / 6;
     grid-row: 5 / 5;

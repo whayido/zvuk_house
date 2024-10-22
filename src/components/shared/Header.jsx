@@ -67,7 +67,7 @@ const Header = () => {
           <ul className={styles.menuContent}>
             <li>
               <a href="#студия" className={styles.menuItem}>
-                О студии
+                О нас
               </a>
             </li>
             <li>

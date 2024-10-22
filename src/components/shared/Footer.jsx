@@ -1,7 +1,6 @@
 "use client";
 
 import styles from "./Footer.module.scss";
-import Button from "../ui/button";
 import Image from "next/image";
 import packageJson from "../../../package.json";
 import classNames from "classnames";
@@ -50,11 +49,9 @@ const Footer = () => {
             Телефон: +7(913) 530-57-90
           </a>
           <div className={styles.center}>
-            {/*      <Button variant="secondary" className={styles.rec}>
-              Записаться
-            </Button> */}
             <nav className={styles.link_social}>
               <a
+                target="_blank"
                 className={classNames(styles.vk)}
                 href="https://vk.com/zvukxouse"
               >
@@ -66,7 +63,11 @@ const Footer = () => {
                 ></Image>
               </a>
 
-              <a className={classNames(styles.tg)} href="https://t.me/dimawert">
+              <a
+                className={classNames(styles.tg)}
+                target="_blank"
+                href="https://t.me/dimawert"
+              >
                 <Image
                   src="/img/Socials/Telegram.svg"
                   width={60}
@@ -78,11 +79,19 @@ const Footer = () => {
             <div className={styles.desc}>
               <p className={styles.creators}>
                 &copy; 2024 Звук Хаус - сайт создан&nbsp;
-                <a href="https://t.me/ne_Twin" className={styles.social_him}>
+                <a
+                  href="https://t.me/ne_Twin"
+                  target="_blank"
+                  className={styles.social_him}
+                >
                   @ne_Twin
                 </a>{" "}
                 и&nbsp;
-                <a href="https://t.me/whayido" className={styles.social_me}>
+                <a
+                  href="https://t.me/whayido"
+                  target="_blank"
+                  className={styles.social_me}
+                >
                   @Whayido
                 </a>
               </p>

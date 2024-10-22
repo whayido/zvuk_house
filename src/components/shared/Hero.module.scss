@@ -1,0 +1,149 @@
+@use "../../styles/color.scss" as color;
+.hero {
+  /*  display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    position: relative; */
+  max-width: 1630px;
+}
+
+.title {
+  font-size: 270px;
+  font-weight: 800;
+  text-align: center;
+  white-space: nowrap;
+}
+.house {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  width: 775px;
+  line-height: 0.65;
+
+  background-color: color.$black;
+  color: color.$white;
+  white-space: nowrap;
+}
+
+.desc {
+  font-weight: 800;
+  font-size: 32px;
+  .mark {
+    color: color.$white;
+    background-color: color.$black;
+  }
+}
+
+.photo {
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+  object-fit: fill;
+  filter: grayscale(100%);
+  -webkit-transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+  &:hover {
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+    filter: grayscale(0);
+  }
+}
+// Modal стили
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal_content {
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: 3px solid color.$white;
+  border-radius: 16px;
+  padding: 10px;
+  width: 60px;
+  height: 60px;
+  color: color.$white;
+  font-size: 60px;
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  &:hover {
+    transition: 0.3s;
+    transform: scale(0.9);
+  }
+}
+@media screen and (max-width: 390px) {
+  .title {
+    line-height: 1.1;
+    font-size: 100px;
+    font-weight: 800;
+    white-space: wrap;
+  }
+  .house {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    line-height: 0.65;
+    background-color: color.$black;
+    color: #ffffff;
+  }
+  .hero {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 30px 10px 10px 10px;
+  }
+  .desc {
+    font-size: 16px;
+  }
+  .photo {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+    object-fit: fill;
+    filter: grayscale(100%);
+    -webkit-transition: all 0.7s ease-in;
+    -moz-transition: all 0.7s ease-in;
+    -o-transition: all 0.7s ease-in;
+    transition: all 0.7s ease-in;
+    &:hover {
+      -webkit-transition: all 0.7s ease-in;
+      -moz-transition: all 0.7s ease-in;
+      -o-transition: all 0.7s ease-in;
+      transition: all 0.7s ease-in;
+      filter: grayscale(0);
+    }
+  }
+}

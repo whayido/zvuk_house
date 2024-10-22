@@ -1,0 +1,106 @@
+@use "../../styles/color.scss" as color;
+.desc_light {
+  font-weight: 400;
+  font-size: 30px;
+}
+
+.info {
+  /*  background-color: color.$black;
+    background-image: url("../../public/img/Background/zx2.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: color.$white;
+    position: relative;
+    transition: filter 0.3s ease;
+    width: 1630px; */
+
+  background-color: color.$black;
+  background-image: url("/public/img/Background/zx.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: color.$white;
+  position: relative;
+  transition: filter 0.3s ease;
+  width: 100%; /* Изменено на 100% для растяжения фона */
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1630px; /* Ширина содержимого */
+  margin: 0 auto; /* Центрируем содержимое */
+}
+.heading {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+  font-weight: 800;
+  background-color: color.$white;
+  color: color.$black;
+  white-space: nowrap;
+  line-height: 1;
+}
+.title_info {
+  text-align: left;
+}
+@media screen and (max-width: 390px) {
+  .info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    justify-content: center;
+    background-color: color.$black;
+    background-image: url("/public/img/Background/zx.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: color.$white;
+    transition: filter 0.3s ease;
+    padding: 20px;
+  }
+  .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .heading {
+    text-wrap: wrap;
+    display: flex;
+    font-size: 30px;
+    font-weight: 800;
+    background-color: color.$white;
+    color: color.$black;
+  }
+
+  .title_items {
+    font-size: 30px;
+  }
+  .text {
+    font-size: 18px;
+  }
+  .price {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 800;
+    width: auto;
+    height: auto;
+    background-color: color.$white;
+    color: color.$black;
+
+    margin-right: auto;
+  }
+  .block {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+  .desc_light {
+    font-weight: 400;
+    font-size: 16px;
+  }
+}

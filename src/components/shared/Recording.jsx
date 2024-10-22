@@ -56,6 +56,7 @@ export default function Recording() {
           <a
             className={classNames(styles.vk)}
             href="https://m.vk.com/zvukxouse"
+            target="_blank"
           >
             <Image
               src="/img/Socials/Telegram.svg"
@@ -65,7 +66,11 @@ export default function Recording() {
             ></Image>
           </a>
 
-          <a className={classNames(styles.tg)} href="https://t.me/dimawert">
+          <a
+            className={classNames(styles.tg)}
+            href="https://t.me/dimawert"
+            target="_blank"
+          >
             <Image
               src="/img/Socials/Vk.svg"
               width={60}

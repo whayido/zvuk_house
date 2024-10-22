@@ -22,7 +22,6 @@ export const metadata = {
     shortcut: "/white.png",
     apple: "/white.png",
   },
-  manifest: "/manifest.json",
   openGraph: {
     title: "ЗВУК ХАУС",
     description: "САМАЯ СЕВЕРНАЯ СТУДИЯ ЗВУКОЗАПИСИ В РОССИИ",

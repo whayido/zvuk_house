@@ -26,13 +26,6 @@ export default function Mixing() {
             </p>
           </div>
         </div>
-        {/* <dt>
-          <dd></dd>
-          <dd></dd>
-          <dd></dd>
-          <dd></dd>
-          <dd></dd>
-        </dt> */}
 
         <p className={styles.desc}>Преимущества:</p>
         <ul className={styles.list}>
@@ -52,6 +45,7 @@ export default function Mixing() {
         <nav className={styles.link_social}>
           <a
             className={classNames(styles.vk)}
+            target="_blank"
             href="https://m.vk.com/zvukxouse"
           >
             <Image
@@ -62,7 +56,11 @@ export default function Mixing() {
             ></Image>
           </a>
 
-          <a className={classNames(styles.tg)} href="https://t.me/dimawert">
+          <a
+            className={classNames(styles.tg)}
+            href="https://t.me/dimawert"
+            target="_blank"
+          >
             <Image
               src="/img/Socials/Vk.svg"
               width={60}
