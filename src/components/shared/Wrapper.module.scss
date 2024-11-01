@@ -97,7 +97,7 @@
   position: absolute;
   top: 60px;
   left: 1675px;
-  background: none;
+  background: color.$none;
   border: 3px solid color.$white;
   border-radius: 16px;
   padding: 10px;
@@ -114,7 +114,8 @@
   font-size: 24px;
   &:hover {
     transition: 0.3s;
-    transform: scale(0.9);
+    background-color: color.$white;
+    color: color.$black;
   }
 }
 @media screen and (max-width: 480px) {

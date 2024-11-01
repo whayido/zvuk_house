@@ -3,12 +3,12 @@
   "emmet.syntaxProfiles": {
     "jsx": {
       "markup.attributes": {
-        "class*": "className",
+        "class*": "className"
       },
       "markup.valuePrefix": {
         "class*": "styles"
+      }
     }
-    }
-    
-  }
+  },
+  "cSpell.words": ["БЕГИЧЕВА", "НОРИЛЬСК", "подробнее", "УЛИЦА"]
 }

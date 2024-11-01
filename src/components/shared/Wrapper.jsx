@@ -125,7 +125,15 @@ export default function Scroll() {
       </div>
 
       {isModalOpen && (
-        <aside className={styles.modal}>
+        <aside
+          className={styles.modal}
+          onClick={(e) => {
+            // Закрытие модального окна при клике на фон
+            if (e.target.classList.contains(styles.modal)) {
+              handleCloseModal();
+            }
+          }}
+        >
           <Button
             variant="third"
             className={styles.closeButton}
@@ -139,7 +147,7 @@ export default function Scroll() {
               src={`/img/Modals/${selectedImage}.jpg`}
               alt={selectedImage}
               width={1630}
-              height={800}
+              height={820}
             />
           </figure>
         </aside>

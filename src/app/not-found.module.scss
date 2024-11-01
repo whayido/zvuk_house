@@ -1,6 +1,7 @@
 @use "../styles/color.scss" as color;
 
 .main {
+  width: 100%;
   background-image: url("../../public/img/Background/not-found.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -8,7 +9,7 @@
   color: color.$white;
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 60px;
   padding: 0 0 0 60px;
@@ -23,11 +24,41 @@
   font-weight: 800;
 }
 @media screen and (max-width: 320px) {
+  .main {
+    width: 100%;
+    gap: 15px;
+    padding: 0 0 0 15px;
+  }
+  .title {
+    font-size: 120px;
+  }
+  .desc {
+    font-size: 22px;
+  }
 }
+
 @media screen and (max-width: 390px) {
+  .main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 0 0 20px;
+  }
+  .title {
+    font-size: 150px;
+  }
+  .desc {
+    font-size: 24px;
+    font-weight: 800;
+  }
 }
+
 @media screen and (max-width: 480px) {
   .main {
+    width: 100%;
     min-height: 800px;
     display: flex;
     justify-content: center;
@@ -44,10 +75,58 @@
   }
 }
 @media screen and (max-width: 768px) {
+  .main {
+    width: 100%;
+    gap: 40px;
+    padding: 0 0 0 40px;
+  }
+  .title {
+    font-size: 250px;
+  }
+  .desc {
+    font-size: 32px;
+    font-weight: 800;
+  }
 }
 @media screen and (max-width: 1000) {
+  .main {
+    width: 100%;
+    gap: 40px;
+    padding: 0 0 0 40px;
+  }
+  .title {
+    font-size: 250px;
+  }
+  .desc {
+    font-size: 32px;
+    font-weight: 800;
+  }
 }
 @media screen and (max-width: 1280px) {
+  .main {
+    width: 100%;
+    gap: 40px;
+    padding: 0 0 0 40px;
+  }
+  .title {
+    font-size: 250px;
+  }
+  .desc {
+    font-size: 32px;
+    font-weight: 800;
+  }
 }
 @media screen and (min-width: 1440px) {
+  .main {
+    width: 100%;
+    gap: 40px;
+    padding: 0 0 0 40px;
+  }
+  .title {
+    font-size: 250px;
+  }
+  .desc {
+    font-size: 32px;
+    font-weight: 800;
+  }
 }

@@ -1,30 +1,55 @@
 @use "../../styles/color.scss" as color;
-
 .header {
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
+  align-items: center;
   position: fixed;
-  height: 75px;
+  height: auto;
   top: 0;
   left: 0;
+  z-index: 100;
   width: 100%;
-  z-index: 3;
-  padding: 10px 20px 0px 20px;
-  backdrop-filter: blur(5px);
-  border-bottom: 1px solid color.$white;
 }
 
-.burgerButton {
-  border: none;
+.address {
+  font-size: clamp(0.75rem, 0.625rem + 0.625vw, 1.375rem);
+  font-weight: normal;
+  white-space: nowrap;
+  padding: 0 0 0 30px;
+  color: black;
+  background-color: white;
+  @media screen and (max-width: 390px) {
+    padding: 10px;
+  }
+}
+.burger {
   background: none;
-  font-size: 30px;
+  padding: 30px 30px 0 0;
+  border: none;
+  font-size: clamp(1rem, 0.825rem + 0.875vw, 1.875rem);
   cursor: pointer;
   user-select: none;
-  padding: 10px;
   transition: transform 0.3s ease;
+  mix-blend-mode: exclusion;
+  @media screen and (max-width: 390px) {
+    padding: 10px;
+  }
 }
-
+.btn {
+  width: 150px;
+  height: 150px;
+  background-color: #2d2d2d;
+  top: 175px;
+  left: 92.5%;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 390px) {
+    width: max-content;
+    height: max-content;
+  }
+}
 .menu {
   position: fixed;
   top: 0;
@@ -36,13 +61,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translateY(-200%);
+  transform: translateY(-300%);
   transition: transform 0.5s ease;
-  z-index: 30;
+  z-index: 100;
+  @media screen and (max-width: 390px) {
+    height: 10vh;
+  }
 }
 
 .menuOpen {
   transform: translateY(0);
+  z-index: 100;
 }
 
 .menuContent {
@@ -54,15 +83,15 @@
 }
 
 .menuItem {
-  font-size: 130px;
+  font-size: clamp(1rem, -0.425rem + 7.125vw, 8.125rem);
   font-weight: 800;
-  border-right: 3px solid color.$white;
   color: color.$white;
   cursor: pointer;
-
+  transition: transform 0.3s ease;
   background-color: color.$black;
   text-decoration: none;
   &:hover {
+    transition: transform 0.3s ease;
     background-color: color.$white;
     color: color.$black;
   }
@@ -74,24 +103,23 @@
 }
 
 .closeButton {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 50px;
+  font-size: clamp(1rem, 0.825rem + 0.875vw, 1.875rem);
   font-weight: 800;
   color: color.$white;
   background-color: transparent;
-  border: none;
+  /* background-color: color.$black; */
+  border: 3px solid color.$white;
+  padding: 10px;
+  width: 70px;
+  height: 70px;
+  border-radius: 16px;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: 0.3s;
 
   &:hover {
-    transition: transform 0.3s ease;
-    transform: scale(0.9);
-  }
-
-  &:focus {
-    outline: none;
+    transition: 0.3s;
+    color: color.$black;
+    background-color: color.$white;
   }
 }
 
@@ -100,7 +128,7 @@
 }
 
 .svg {
-  height: 50px;
+  height: clamp(2rem, 1.775rem + 1.125vw, 3.125rem);
 
   > path {
     transition: transform 0.4s ease;
@@ -186,14 +214,14 @@
   }
 }
 
-.address {
-  font-size: 24px;
-  font-weight: normal;
-  white-space: nowrap;
-  position: relative;
-  color: color.$white;
+/* @media screen and (max-width: 320px) {
 }
-
+@media screen and (max-width: 390px) {
+  .address {
+    font-size: 22px;
+    padding: 10px;
+  }
+}
 @media screen and (max-width: 480px) {
   .header {
     height: 10px;
@@ -212,7 +240,7 @@
     height: 25px;
   }
   .menuItem {
-    /* padding: 10px 20px; */
+    /* padding: 10px 20px;
     font-size: 25px;
     font-weight: 600;
 
@@ -280,3 +308,62 @@
     transform: translateY(0);
   }
 }
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 1000px) {
+}
+@media screen and (max-width: 1280px) {
+  .header {
+    height: 55px;
+    padding: 10px 20px 0px 20px;
+  }
+
+  .burgerButton {
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20vh;
+    background-color: color.$black;
+    color: color.$white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-200%);
+    transition: transform 0.5s ease;
+    z-index: 30;
+  }
+
+  .menuOpen {
+    transform: translateY(0);
+  }
+
+  .menuItem {
+    font-size: 90px;
+  }
+
+  .closeButton {
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+  }
+
+  .svg_menu {
+    width: 30px;
+  }
+
+  .svg {
+    height: 30px;
+  }
+
+  .address {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 1440px) {
+} */

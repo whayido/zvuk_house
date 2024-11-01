@@ -1,28 +1,17 @@
+"use client";
 import Recording from "./Recording";
 import Mixing from "./Mixing";
-import Vocals from "./Vocals";
+import Vocals from "../ui/Modal";
 import classNames from "classnames";
 import styles from "./Services.module.scss";
 import Image from "next/image";
-import Button from "@/components/ui/button";
+import Button from "../../components/ui/button";
 import { useState } from "react";
-export default function Services() {
-  const [isMoreOpen, setIsMoreOpen] = useState(false);
-  const openMoreModal = () => setIsMoreOpen(true);
-  const closeMoreModal = () => setIsMoreOpen(false);
 
+export default function Services() {
   const [isRecordingOpen, setIsRecordingOpen] = useState(false);
   const [isMixingOpen, setIsMixingOpen] = useState(false);
   const [isVocalsOpen, setIsVocalsOpen] = useState(false);
-
-  const openRecordingModal = () => setIsRecordingOpen(true);
-  const closeRecordingModal = () => setIsRecordingOpen(false);
-
-  const openMixingModal = () => setIsMixingOpen(true);
-  const closeMixingModal = () => setIsMixingOpen(false);
-
-  const openVocalsModal = () => setIsVocalsOpen(true);
-  const closeVocalsModal = () => setIsVocalsOpen(false);
 
   const openModal = (setModalOpen) => {
     setModalOpen(true);
@@ -44,7 +33,6 @@ export default function Services() {
           >
             УСЛУГИ
           </h2>
-
           <Image
             className={classNames(styles.photos, styles.synth)}
             src="/img/Content/synth.jpg"
@@ -53,7 +41,6 @@ export default function Services() {
             loading="lazy"
             alt="synth"
           />
-
           <Image
             className={classNames(styles.photos, styles.rec)}
             src="/img/Content/rec.jpg"
@@ -62,7 +49,26 @@ export default function Services() {
             loading="lazy"
             alt="recording"
           />
-
+          {isRecordingOpen && (
+            <div
+              className={styles.modal}
+              onClick={(e) => {
+                if (e.target.classList.contains(styles.modal)) {
+                  closeModal(setIsRecordingOpen);
+                }
+              }}
+            >
+              <div className={styles.modal_content}>
+                <Recording />
+                <button
+                  className={styles.closeButton}
+                  onClick={() => closeModal(setIsRecordingOpen)}
+                >
+                  &times;
+                </button>
+              </div>
+            </div>
+          )}
           <ul className={styles.list}>
             <li className={classNames(styles.song)}>
               <h3 className={styles.title_items} id="запись">
@@ -81,6 +87,7 @@ export default function Services() {
                 </Button>
               </aside>
             </li>
+
             <li className={classNames(styles.mixing)}>
               <h3 className={styles.title_items} id="сведение">
                 СВЕДЕНИЕ И МИКС
@@ -116,6 +123,7 @@ export default function Services() {
               </aside>
             </li>
           </ul>
+
           <Image
             className={classNames(styles.photos, styles.equipment)}
             src="/img/Content/equipment.jpg"
@@ -135,22 +143,15 @@ export default function Services() {
         </div>
       </section>
 
-      {isRecordingOpen && (
-        <div className={styles.modal}>
-          <div className={styles.modal_content}>
-            <Recording />
-            <button
-              className={styles.closeButton}
-              onClick={() => closeModal(setIsRecordingOpen)}
-            >
-              &times;
-            </button>
-          </div>
-        </div>
-      )}
-
       {isMixingOpen && (
-        <div className={styles.modal}>
+        <div
+          className={styles.modal}
+          onClick={(e) => {
+            if (e.target.classList.contains(styles.modal)) {
+              closeModal(setIsMixingOpen);
+            }
+          }}
+        >
           <div className={styles.modal_content}>
             <Mixing />
             <button
@@ -162,9 +163,15 @@ export default function Services() {
           </div>
         </div>
       )}
-
       {isVocalsOpen && (
-        <div className={styles.modal}>
+        <div
+          className={styles.modal}
+          onClick={(e) => {
+            if (e.target.classList.contains(styles.modal)) {
+              closeModal(setIsVocalsOpen);
+            }
+          }}
+        >
           <div className={styles.modal_content}>
             <Vocals />
             <button

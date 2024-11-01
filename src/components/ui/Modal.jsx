@@ -1,55 +1,57 @@
-import styles from "./Mixing.module.scss";
+"use client";
+import styles from "./Modal.module.scss";
 import Image from "next/image";
 import classNames from "classnames";
-export default function Mixing() {
+export default function Modal() {
   return (
     <>
       <main className={styles.content}>
-        <h1 className={styles.title}>СВЕДЕНИЕ И МИКС</h1>
+        <h1 className={styles.title}>УРОКИ ВОКАЛА</h1>
         <div className={styles.side}>
           <div className={styles.text}>
             <p className={styles.desc}>
-              Студия звукозаписи Звук Хаус предлагает
-              <br /> профессиональные услуги мастеринга и микширования ваших
-              треков.
+              Студия звукозаписи Звук Хаус приглашает
+              <br /> всех, кто мечтает овладеть искусством вокала, на
+              профессиональные уроки.
             </p>
             <p className={classNames(styles.desc, styles.right)}>
-              Наши специалисты помогут добиться
-              <br /> идеального звучания, которое будет качественно
-              воспроизводиться на любых устройствах.
+              Мы предлагаем индивидуальные занятия,
+              <br /> которые помогут вам раскрыть свой голос, научиться
+              правильно петь и создавать качественные вокальные записи.
             </p>
           </div>
           <div className={styles.money}>
             <p className={styles.price}>
-              от <span className={styles.price}>3000</span>
-              <span className={styles.price}>рублей</span>{" "}
+              КУРС 9000<span className={styles.price}>рублей</span>
             </p>
           </div>
         </div>
+        {/*    <dt>
+          <dd></dd>
+          <dd></dd>
+          <dd></dd>
+          <dd></dd>
+          <dd></dd>
+        </dt> */}
 
         <p className={styles.desc}>Преимущества:</p>
         <ul className={styles.list}>
+          <li className={styles.desc_li}>Гибкий график занятий.</li>
           <li className={styles.desc_li}>
-            Индивидуальный подход к каждому проекту.
+            Поддержка и сопровождение на всех этапах обучения.
           </li>
           <li className={styles.desc_li}>
-            Опытные инженеры с многолетним стажем.
-          </li>
-          <li className={styles.desc_li}>
-            Высокое качество звука, соответствующее международным стандартам.
-          </li>
-          <li className={styles.desc_li}>
-            Быстрое выполнение заказов с возможностью срочной обработки.
+            Включение в процесс записи вокала в студии.
           </li>
         </ul>
         <nav className={styles.link_social}>
           <a
             className={classNames(styles.vk)}
-            target="_blank"
             href="https://m.vk.com/zvukxouse"
+            target="_blank"
           >
             <Image
-              src="/img/Logo/Telegram.svg"
+              src="../../../public/img/Logo/Vk.svg"
               width={60}
               height={60}
               alt="link_vk"
@@ -62,7 +64,7 @@ export default function Mixing() {
             target="_blank"
           >
             <Image
-              src="/img/Logo/Vk.svg"
+              src="../../../public/img/Logo/Telegram.svg"
               width={60}
               height={60}
               alt="link_telegram"

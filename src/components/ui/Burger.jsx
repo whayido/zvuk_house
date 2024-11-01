@@ -1,24 +1,10 @@
-"use client";
-import { useState } from "react";
-import styles from "./Header.module.scss";
-import Button from "../ui/button";
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
+export default function Burger() {
   return (
     <>
-      <header className={styles.header}>
-        <address className={styles.address}>
-          <b>НОРИЛЬСК</b> УЛИЦА БЕГИЧЕВА 27/4
-        </address>
-        <Button
-          variant="primary"
+      <div className={styles.filter}>
+        <button
           aria-label="Menu"
-          className={styles.burger}
+          className={styles.burgerButton}
           onClick={toggleMenu}
         >
           <svg
@@ -63,37 +49,8 @@ const Header = () => {
               className={styles.slider__right__lower}
             ></path>
           </svg>
-        </Button>
-
-        <nav className={`${styles.menu} ${isMenuOpen ? styles.menuOpen : ""}`}>
-          <ul className={styles.menuContent}>
-            <li>
-              <a href="#студия" className={styles.menuItem}>
-                О нас
-              </a>
-            </li>
-            <li>
-              {" "}
-              <a href="#услуги" className={styles.menuItem}>
-                Услуги
-              </a>
-            </li>
-            <li>
-              {" "}
-              <a href="#контакты" className={styles.menuItem}>
-                Контакты
-              </a>
-            </li>
-          </ul>
-          <div className={styles.btn}>
-            <button className={styles.closeButton} onClick={toggleMenu}>
-              &#10005;
-            </button>
-          </div>
-        </nav>
-      </header>
+        </button>
+      </div>
     </>
   );
-};
-
-export default Header;
+}

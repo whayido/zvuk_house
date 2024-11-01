@@ -1,22 +1,96 @@
 projects:
     ✔ marquee починить баг на мобилке подключить библиотеку @done (21.10.2024, 09:05:28)
-    ☐ починить кнопку на странице 404
-    ☐ versel
+    ✔ починить кнопку на странице 404 @done (23.10.2024, 17:07:22)
+    ✔ versel @done (23.10.2024, 17:07:26)
+    ✔ scrollbar @done (26.10.2024, 02:43:31)
     ☐ адаптив разных масштабов сделать
     ☐ почистить код
-    ☐ разобрать с фото
+    ✔ разобрать с фото @done (23.10.2024, 20:25:35)
     ☐ бургер лого цвет 
-    ☐ задний фон зв один
-    ☐ перекрасить карту
-    ☐ футер круглосуточно 
+    ✔ задний фон зв один @done (23.10.2024, 17:52:21)
+    ✔ перекрасить карту @done (23.10.2024, 17:08:01)
+    ✔ футер круглосуточно @done (23.10.2024, 20:25:39)
     ☐ модальные окна в информации
-    ☐ модальные окна услуги
+    ✔ модальные окна услуги @done (26.10.2024, 02:43:40)
     ☐ один элемент для модальных окон
-    ☐ на пустое простанов модальное окно закрыть 
+    ✔ на пустое простанов модальное окно закрыть @done (26.10.2024, 02:43:48)
     ☐ Кеш фоток
     ☐ ссылка у хедере о нас
     ✔ Открытие ссылок в новом окне @done (21.10.2024, 23:58:39)s
     ✔ секции на разные компоненты разбить @done (21.10.2024, 09:04:54)
+
+
+
+
+    <link
+    rel="apple-touch-icon"
+    sizes="57x57"
+    href="/public/favicon/white/apple-icon-57x57.png"
+  />
+  <link
+    rel="apple-touch-icon"
+    sizes="60x60"
+    href="/public/favicon/white/apple-icon-60x60.png"
+  />
+  <link
+    rel="apple-touch-icon"
+    sizes="72x72"
+    href="/public/favicon/white/apple-icon-72x72.png"
+  />
+  <link
+    rel="apple-touch-icon"
+    sizes="76x76"
+    href="/public/favicon/white/apple-icon-76x76.png"
+  />
+  <link
+    rel="apple-touch-icon"
+    sizes="114x114"
+    href="/public/favicon/white/apple-icon-114x114.png"
+  />
+  <link
+    rel="apple-touch-icon"
+    sizes="120x120"
+    href="/public/favicon/white/apple-icon-120x120.png"
+  />
+  <link
+    rel="apple-touch-icon"
+    sizes="144x144"
+    href="/public/favicon/white/apple-icon-144x144.png"
+  />
+  <link
+    rel="apple-touch-icon"
+    sizes="152x152"
+    href="/public/favicon/white/apple-icon-152x152.png"
+  />
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/public/favicon/white/apple-icon-180x180.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="192x192"
+    href="/public/favicon/white/android-icon-192x192.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="/public/favicon/white/favicon-32x32.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="96x96"
+    href="/public/favicon/white/favicon-96x96.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="/public/favicon/white/favicon-16x16.png"
+  />
 
 
     

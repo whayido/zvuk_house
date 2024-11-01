@@ -28,7 +28,7 @@ html:focus-within {
 }
 
 body {
-  min-height: 100vh;
+  min-height: max-content;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-display: swap;

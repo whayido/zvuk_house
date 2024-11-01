@@ -1,21 +1,24 @@
 @use "../../styles/color.scss" as color;
 .hero {
-  /*  display: flex;
-    flex-direction: column;
-    gap: 0px;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    width: 100%;
-    position: relative; */
   max-width: 1630px;
+  background-color: white;
+  @media screen and (max-width: 390px) {
+    width: 100%;
+    padding: 10px 10px 0 10px;
+  }
 }
 
 .title {
-  font-size: 270px;
+  /* font-size: 270px; */
+  font-size: clamp(6rem, 3.825rem + 10.875vw, 16.875rem);
   font-weight: 800;
+  text-wrap: nowrap;
   text-align: center;
-  white-space: nowrap;
+
+  @media screen and (max-width: 390px) {
+    line-height: 1;
+    text-wrap: wrap;
+  }
 }
 .house {
   display: inline-flex;
@@ -27,12 +30,16 @@
 
   background-color: color.$black;
   color: color.$white;
-  white-space: nowrap;
+
+  @media screen and (max-width: 390px) {
+    width: 280px;
+    line-height: 0.7;
+  }
 }
 
 .desc {
   font-weight: 800;
-  font-size: 32px;
+  font-size: clamp(1rem, 0.8rem + 1vw, 2rem);
   .mark {
     color: color.$white;
     background-color: color.$black;
@@ -43,6 +50,8 @@
   border-top-left-radius: 32px;
   border-top-right-radius: 32px;
   object-fit: fill;
+  height: auto;
+  width: 100%;
   filter: grayscale(100%);
   -webkit-transition: all 0.5s ease-in;
   -moz-transition: all 0.5s ease-in;
@@ -56,7 +65,7 @@
     filter: grayscale(0);
   }
 }
-// Modal стили
+
 .modal {
   position: fixed;
   top: 0;
@@ -97,53 +106,5 @@
   &:hover {
     transition: 0.3s;
     transform: scale(0.9);
-  }
-}
-@media screen and (max-width: 390px) {
-  .title {
-    line-height: 1.1;
-    font-size: 100px;
-    font-weight: 800;
-    white-space: wrap;
-  }
-  .house {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 270px;
-    line-height: 0.65;
-    background-color: color.$black;
-    color: #ffffff;
-  }
-  .hero {
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 30px 10px 10px 10px;
-  }
-  .desc {
-    font-size: 16px;
-  }
-  .photo {
-    width: 100%;
-    height: auto;
-    border-top-left-radius: 32px;
-    border-top-right-radius: 32px;
-    object-fit: fill;
-    filter: grayscale(100%);
-    -webkit-transition: all 0.7s ease-in;
-    -moz-transition: all 0.7s ease-in;
-    -o-transition: all 0.7s ease-in;
-    transition: all 0.7s ease-in;
-    &:hover {
-      -webkit-transition: all 0.7s ease-in;
-      -moz-transition: all 0.7s ease-in;
-      -o-transition: all 0.7s ease-in;
-      transition: all 0.7s ease-in;
-      filter: grayscale(0);
-    }
   }
 }

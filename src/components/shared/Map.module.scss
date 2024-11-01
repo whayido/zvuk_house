@@ -1,11 +1,10 @@
 @use "../../styles/color.scss" as color;
-
 .map {
   width: 100%;
-  background-image: url("/public/img/Background/zx2.svg");
+  background-color: color.$black;
+  background-image: url("../../../public/img/Background/content.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: color.$black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,27 +13,40 @@
 }
 .map_center {
   width: 1630px;
+  @media screen and (max-width: 390px) {
+    width: 100%;
+    padding: 0 10px 0 10px;
+    display: flex;
+    flex-direction: column;
+  }
 }
 .desc_map {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin: 10px 0 40px 0;
 }
 .map_map {
+  width: 100%;
   border-radius: 32px;
   margin-top: 60px;
+  filter: saturate(0.3);
+  @media screen and (max-width: 390px) {
+    width: auto;
+    height: 400px;
+  }
 }
 .desc {
   font-weight: 800;
-  font-size: 32px;
+  font-size: clamp(0.625rem, 0.35rem + 1.375vw, 2rem);
 }
 .link_map {
   color: color.$black;
   background-color: color.$white;
+  padding: 3px 5px 3px 5px;
 }
 .address {
   color: color.$white;
-  font-size: 32px;
+  font-size: clamp(0.625rem, 0.35rem + 1.375vw, 2rem);
   position: relative;
   float: right;
   font-weight: 800;
@@ -43,21 +55,17 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  font-size: 80px;
+  font-size: clamp(2.5rem, 2rem + 2.5vw, 5rem);
   font-weight: 800;
   background-color: color.$white;
   color: color.$black;
   white-space: nowrap;
   line-height: 1;
 }
-
+/* @media screen and (max-width: 320px) {
+}
 @media screen and (max-width: 390px) {
   .map {
-    width: 100vw;
-    background-image: url("/public/img/Background/zx2.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: color.$black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,7 +76,7 @@
     width: 100%;
   }
   .map_map {
-    width: 100vw;
+    width: 100%;
   }
   .address {
     color: color.$white;
@@ -78,3 +86,39 @@
     font-weight: 800;
   }
 }
+@media screen and (max-width: 480px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 1000) {
+}
+@media screen and (max-width: 1280px) {
+  .map {
+    max-width: 1200px;
+
+    gap: 10px;
+  }
+  .map_center {
+    width: 100%;
+  }
+  .desc_map {
+    margin-bottom: 30px;
+  }
+  .map_map {
+    width: 100%;
+    border-radius: 32px;
+    margin-top: 40px;
+  }
+  .desc {
+    font-size: 22px;
+  }
+
+  .address {
+    font-size: 22px;
+  }
+  .heading {
+    font-size: 60px;
+  }
+}
+@media screen and (min-width: 1440px) {
+} */

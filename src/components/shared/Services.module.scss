@@ -1,6 +1,63 @@
 @use "../../styles/color.scss" as color;
+
+.services {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  background-color: color.$black;
+  background-image: url("../../../public/img/Background/content.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.services_content {
+  width: 1630px;
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  grid-template-rows: repeat(17, auto);
+  /*    grid-template-columns: repeat(auto-fit, minmax(1rem, 1fr));
+  grid-template-rows: repeat(17, auto);*/
+  position: relative;
+
+  color: color.$white;
+  margin-bottom: 40px;
+  @media screen and (max-width: 390px) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 10px 0 10px;
+    margin-bottom: 40px;
+  }
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); // Полупрозрачный фон для затемнения
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; // Убедитесь, что модальное окно выше всех других элементов
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: color.$black;
+}
+
 .photos {
   filter: grayscale(100%);
+  height: auto;
   -webkit-transition: all 0.5s ease-in;
   -moz-transition: all 0.5s ease-in;
   -o-transition: all 0.5s ease-in;
@@ -13,6 +70,9 @@
     transition: all 0.5s ease-in;
     filter: grayscale(0);
   }
+  @media screen and (max-width: 390px) {
+    display: none;
+  }
 }
 .list {
   display: contents;
@@ -23,7 +83,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  font-size: 80px;
+  font-size: clamp(2.5rem, 2rem + 2.5vw, 5rem);
   font-weight: 800;
   background-color: color.$white;
   color: color.$black;
@@ -32,17 +92,17 @@
 }
 
 .title_items {
-  font-size: 60px;
+  font-size: clamp(2rem, 1.65rem + 1.75vw, 3.75rem);
   font-weight: 800;
 }
 .text {
-  font-size: 32px;
+  font-size: clamp(1rem, 0.8rem + 1vw, 2rem);
 }
 .price {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  font-size: 32px;
+  font-size: clamp(1rem, 0.8rem + 1vw, 2rem);
   font-weight: 800;
   width: auto;
   height: auto;
@@ -88,104 +148,4 @@
 .micro {
   grid-column: 4/6;
   grid-row: 13/17;
-}
-.services {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
-  background-color: color.$black;
-  background-image: url("/public/img/Background/zx.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.services_content {
-  width: 1630px;
-  display: grid;
-  grid-template-columns: repeat(6, auto);
-  position: relative;
-  grid-template-rows: repeat(17, auto);
-  color: color.$white;
-  margin-bottom: 40px;
-}
-@media screen and (max-width: 390px) {
-  .services {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background-color: color.$black;
-    background-image: url("/public/img/Background/zx.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: color.$white;
-  }
-  .services_content {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    color: color.$white;
-    margin-bottom: 40px;
-  }
-
-  .photos {
-    display: none;
-    filter: grayscale(100%);
-    -webkit-transition: all 0.7s ease-in;
-    -moz-transition: all 0.7s ease-in;
-    -o-transition: all 0.7s ease-in;
-    transition: all 0.7s ease-in;
-    object-fit: cover;
-    &:hover {
-      -webkit-transition: all 0.7s ease-in;
-      -moz-transition: all 0.7s ease-in;
-      -o-transition: all 0.7s ease-in;
-      transition: all 0.7s ease-in;
-      filter: grayscale(0);
-    }
-  }
-  .list {
-    display: contents;
-    padding: 0;
-    text-align: right;
-
-    li {
-      padding-right: 20px;
-    }
-  }
-  .title_services {
-    grid-column: 5/6;
-    grid-row: 1/2;
-  }
-  .synth {
-    grid-column: 1/3;
-    grid-row: 1/5;
-  }
-  .rec {
-    grid-column: 1/3;
-    grid-row: 6/13;
-  }
-  .equipment {
-    grid-column: 1/3;
-    grid-row: 14/17;
-  }
-
-  .song {
-    grid-column: 4/6;
-    grid-row: 3/5;
-  }
-  .mixing {
-    grid-column: 4/6;
-    grid-row: 7/9;
-  }
-  .vocals {
-    grid-column: 4/6;
-    grid-row: 10/13;
-  }
-  .micro {
-    grid-column: 4/6;
-    grid-row: 13/17;
-  }
 }

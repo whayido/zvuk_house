@@ -1,23 +1,19 @@
-/* Пример базовой кастомизации */
 .os-scrollbar {
   background-color: rgba(0, 0, 0, 0.1);
   width: 20px;
 }
 
 .os-scrollbar-handle {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #2d2d2d;
 }
-// ScrollBar.module.scss
 
 .scrollContainer {
-  height: 100%; /* Убедитесь, что контейнер имеет высоту для скроллбара */
+  height: 100%;
   max-height: 100vh;
-  overflow: hidden; /* Скрываем стандартные скроллбары */
+  overflow: hidden;
 }
 
 .osTheme {
-  /* Тема скроллбара */
-
   --os-scrollbar-size: 20px; /* Увеличиваем ширину скроллбара до 20px */
   --os-scrollbar-color: #f00a0a; /* Цвет скроллбара */
   --os-scrollbar-hover-color: #555; /* Цвет скроллбара при наведении */

@@ -50,7 +50,7 @@ export default function Mixing() {
             target="_blank"
           >
             <Image
-              src="/img/Socials/Telegram.svg"
+              src="/img/Logo/Telegram.svg"
               width={60}
               height={60}
               alt="link_vk"
@@ -63,7 +63,7 @@ export default function Mixing() {
             target="_blank"
           >
             <Image
-              src="/img/Socials/Vk.svg"
+              src="/img/Logo/Vk.svg"
               width={60}
               height={60}
               alt="link_telegram"

@@ -3,41 +3,31 @@
 .main {
   display: flex;
   flex-direction: column;
-  gap: 0px;
+  justify-content: center;
   align-items: center;
-  flex: 1 0 auto;
   overflow-x: hidden;
-  margin: 0 auto;
-}
-@media screen and (max-width: 320px) {
-}
-@media screen and (max-width: 390px) {
-  .main {
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin: 0 auto;
+  width: 100%;
+  background-color: white;
+  @media screen and (max-width: 390px) {
+    margin-top: 50px;
   }
 }
-@media screen and (max-width: 480px) {
-  .main {
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin: 0 auto;
-  }
+.content {
+  background-color: black;
+  width: 100%;
 }
-@media screen and (max-width: 768px) {
-}
-@media screen and (max-width: 1000) {
+
+/* @media screen and (min-width: 1440px) {
 }
 @media screen and (max-width: 1280px) {
 }
-@media screen and (min-width: 1440px) {
+@media screen and (max-width: 1024px) {
 }
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 480px) {
+}
+@media screen and (max-width: 390px) {
+}
+@media screen and (max-width: 320px) {
+} */

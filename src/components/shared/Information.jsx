@@ -1,4 +1,4 @@
-import Scroll from "@/components/shared/Wrapper";
+import Scroll from "../../components/shared/Wrapper";
 import styles from "./Info.module.scss";
 import classNames from "classnames";
 export default function Information() {

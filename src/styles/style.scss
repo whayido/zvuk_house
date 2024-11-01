@@ -1,15 +1,15 @@
 @use "null.scss";
 @use "color.scss";
-@use "media.module.scss";
+@use "global.scss" as *;
 @import "overlayscrollbars/overlayscrollbars.css";
 
 * {
-  scroll-margin-top: 100px;
+  scroll-margin-top: rem(100);
 }
 
 ::selection {
-  background: #000000;
-  color: #ffffff;
+  background: color.$black;
+  color: color.$white;
 }
 ::-webkit-scrollbar {
   display: none;
