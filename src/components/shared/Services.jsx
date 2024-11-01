@@ -7,7 +7,7 @@ import styles from "./Services.module.scss";
 import Image from "next/image";
 import Button from "../../components/ui/button";
 import { useState } from "react";
-
+import Synth from "../../../public/img/Content/synth.JPG";
 export default function Services() {
   const [isRecordingOpen, setIsRecordingOpen] = useState(false);
   const [isMixingOpen, setIsMixingOpen] = useState(false);
@@ -35,10 +35,9 @@ export default function Services() {
           </h2>
           <Image
             className={classNames(styles.photos, styles.synth)}
-            src="../../../public/img/Content/synth.JPG"
+            src={Synth}
             width={815}
             height={506}
-            loading="lazy"
             alt="synth"
           />
           <Image
@@ -46,7 +45,6 @@ export default function Services() {
             src="/img/Content/rec.jpg"
             width={815}
             height={950}
-            loading="lazy"
             alt="recording"
           />
           {isRecordingOpen && (
