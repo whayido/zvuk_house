@@ -1,6 +1,8 @@
 import styles from "./Vocals.module.scss";
 import Image from "next/image";
 import classNames from "classnames";
+import Vk from "../../../public/img/Logo/vk.svg";
+import Telegram from "../../../public/img/Logo/telegram.svg";
 export default function Mixing() {
   return (
     <>
@@ -49,12 +51,7 @@ export default function Mixing() {
             href="https://m.vk.com/zvukxouse"
             target="_blank"
           >
-            <Image
-              src="/img/Logo/Telegram.svg"
-              width={60}
-              height={60}
-              alt="link_vk"
-            ></Image>
+            <Image src={Telegram} width={60} height={60} alt="link_vk"></Image>
           </a>
 
           <a
@@ -62,12 +59,7 @@ export default function Mixing() {
             href="https://t.me/dimawert"
             target="_blank"
           >
-            <Image
-              src="/img/Logo/Vk.svg"
-              width={60}
-              height={60}
-              alt="link_telegram"
-            ></Image>
+            <Image src={Vk} width={60} height={60} alt="link_telegram"></Image>
           </a>
           <a
             href="tel:+7(913) 530-57-90"

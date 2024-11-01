@@ -8,6 +8,10 @@ import Image from "next/image";
 import Button from "../../components/ui/button";
 import { useState } from "react";
 import Synth from "../../../public/img/Content/synth.JPG";
+import Rec from "../../../public/img/Content/rec.JPG";
+import Equipment from "../../../public/img/Content/equipment.JPG";
+import Micro from "../../../public/img/Content/micro.JPG";
+
 export default function Services() {
   const [isRecordingOpen, setIsRecordingOpen] = useState(false);
   const [isMixingOpen, setIsMixingOpen] = useState(false);
@@ -42,7 +46,7 @@ export default function Services() {
           />
           <Image
             className={classNames(styles.photos, styles.rec)}
-            src="/img/Content/rec.jpg"
+            src={Rec}
             width={815}
             height={950}
             alt="recording"
@@ -124,7 +128,7 @@ export default function Services() {
 
           <Image
             className={classNames(styles.photos, styles.equipment)}
-            src="/img/Content/equipment.jpg"
+            src={Equipment}
             width={815}
             height={600}
             loading="lazy"
@@ -132,7 +136,7 @@ export default function Services() {
           />
           <Image
             className={classNames(styles.photos, styles.micro)}
-            src="/img/Content/micro.jpg"
+            src={Micro}
             width={815}
             height={600}
             loading="lazy"
