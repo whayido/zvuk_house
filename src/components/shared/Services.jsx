@@ -35,7 +35,7 @@ export default function Services() {
           </h2>
           <Image
             className={classNames(styles.photos, styles.synth)}
-            src="/img/Content/synth.jpg"
+            src="../../../public/img/Content/synth.JPG"
             width={815}
             height={506}
             loading="lazy"
