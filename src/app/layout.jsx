@@ -32,8 +32,8 @@ export const metadata = {
     images: [
       {
         url: "/public/img/Content/synth.JPG",
-        width: 1200,
-        height: 630,
+        width: 900,
+        height: 500,
         alt: "ЗВУК ХАУС",
       },
     ],
@@ -47,6 +47,7 @@ export default function RootLayout({ children }) {
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="theme-color" content="#f4f4f4" />
+        <meta name="yandex-verification" content="ef5c49e4465dfda4" />
         <link data-rh="true" rel="icon" href="/white.png" />
       </head>
       <body>
