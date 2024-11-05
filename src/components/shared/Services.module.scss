@@ -22,13 +22,17 @@
 
   color: color.$white;
   margin-bottom: 40px;
-  @media screen and (max-width: 390px) {
+  @media screen and (min-width: 321px) and (max-width: 480px) {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding: 0 10px 0 10px;
     margin-bottom: 40px;
+  }
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    width: 100%;
+    padding: 10px;
   }
 }
 .modal {
@@ -50,7 +54,7 @@
   right: 10px;
   background: none;
   border: none;
-  font-size: 24px;
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
   cursor: pointer;
   color: color.$black;
 }
@@ -72,6 +76,9 @@
   }
   @media screen and (max-width: 390px) {
     display: none;
+  }
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    width: 100%;
   }
 }
 .list {

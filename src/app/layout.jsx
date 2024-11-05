@@ -1,9 +1,15 @@
-import "../styles/fonts.scss";
 import "../styles/style.scss";
 import "../styles/_null.scss";
 import Header from "../components/shared/Header";
 import Footer from "../components/shared/Footer";
 import ScrollBar from "../components/shared/ScrollBar";
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+  display: "swap",
+});
 
 export const metadata = {
   title: "ЗВУК ХАУС",
@@ -23,22 +29,21 @@ export const metadata = {
     type: "website",
     locale: "ru_RU",
     siteName: " ЗВУК ХАУС",
-    /*   images: [
+    images: [
       {
-        url: "https://www.zvukxouse.ru/logo.png", // Ваше изображение для соцсетей
-        width: 1200, // Рекомендуемый размер
+        url: "/public/img/Content/synth.JPG",
+        width: 1200,
         height: 630,
-        alt: "ZvukXouse Logo",
+        alt: "ЗВУК ХАУС",
       },
-    ], */
+    ],
   },
   appleMobileWebAppStatusBarStyle: "#f4f4f4",
-  msApplicationNavButtonColor: "#f4f4f4",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ru">
+    <html lang="ru" className={montserrat.className}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="theme-color" content="#f4f4f4" />

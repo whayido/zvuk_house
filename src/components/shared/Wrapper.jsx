@@ -43,13 +43,8 @@ export default function Scroll() {
 
   return (
     <>
-      <div className={styles.wrapper}>
-        <ul
-          className={styles.container}
-          style={{
-            transform: `translateX(-${currentIndex * 33}%)`,
-          }}
-        >
+      <section className={styles.wrapper}>
+        <ul className={styles.container}>
           <li
             className={styles.container_item}
             onClick={() => handleClick("call")}
@@ -103,7 +98,7 @@ export default function Scroll() {
             />
           </li>
         </ul>
-      </div>
+      </section>
 
       <div className={styles.controls}>
         <Button
@@ -128,7 +123,6 @@ export default function Scroll() {
         <aside
           className={styles.modal}
           onClick={(e) => {
-            // Закрытие модального окна при клике на фон
             if (e.target.classList.contains(styles.modal)) {
               handleCloseModal();
             }

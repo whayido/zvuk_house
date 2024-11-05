@@ -21,7 +21,7 @@
     background-color: color.$white;
     color: color.$black;
   }
-  @media screen and (max-width: 390px) {
+  @media screen and (min-width: 321px) and (max-width: 768px) {
     border: 1px solid color.$black;
     padding: 5px 15px 5px 15px;
   }
@@ -45,6 +45,10 @@
     transition: 0.3s;
     background-color: color.$white;
     color: color.$black;
+  }
+  @media screen and (min-width: 321px) and (max-width: 768px) {
+    border: 2px solid color.$white;
+    padding: 3px 10px 3px 10px;
   }
 }
 .third {
