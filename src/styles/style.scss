@@ -11,8 +11,8 @@
     @error 'rem(numbers)';
   }
 }
-@import "overlayscrollbars/overlayscrollbars.css";
-
+/* @import "overlayscrollbars/overlayscrollbars.css";
+ */
 * {
   scroll-margin-top: rem(100);
 }
@@ -21,6 +21,6 @@
   background: var(--black);
   color: var(--white);
 }
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   display: none;
-}
+} */

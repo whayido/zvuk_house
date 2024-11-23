@@ -2,11 +2,13 @@
   width: max-content;
   margin: 0 auto;
   display: flex;
-  gap: 40px;
+  gap: 30px;
   transition: transform 0.3s ease;
   scroll-behavior: smooth;
   padding: 0;
+  margin-bottom: 40px;
   @media (max-width: 768px) {
+    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,9 +16,11 @@
   }
 }
 .wrapper {
+  display: flex;
   width: 100%;
 }
 .container_item {
+  flex: 0 30%;
   object-fit: contain;
   cursor: pointer;
   @media (max-width: 768px) {
@@ -30,7 +34,8 @@
   border-radius: 18px;
 }
 .controls {
-  display: flex;
+  display: none;
+  /*   display: flex; */
   justify-content: flex-start;
   margin: 20px 0 40px 0;
   gap: 20px;

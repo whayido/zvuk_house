@@ -7,8 +7,7 @@ import Button from "../ui/button";
 export default function Scroll() {
   const [isModalOpen, setModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
-  const [canScrollNext, setCanScrollNext] = useState(true);
-  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isSmallScreen, setIsSmallScreen] = useState(false); // Определяем текущий размер экрана
   const containerRef = useRef(null);
 
@@ -22,39 +21,41 @@ export default function Scroll() {
   };
 
   const handleNext = () => {
-    if (containerRef.current) {
-      const container = containerRef.current;
-      const scrollAmount = container.clientWidth;
-      const maxScrollLeft = container.scrollWidth - container.clientWidth;
-
-      container.scrollLeft = Math.min(
-        container.scrollLeft + scrollAmount,
-        maxScrollLeft
-      );
-      checkScrollAvailability();
+    if (currentIndex === 0) {
+      scrollToState(1);
+      setCurrentIndex(1);
     }
   };
 
   const handlePrev = () => {
-    if (containerRef.current) {
-      const container = containerRef.current;
-      const scrollAmount = container.clientWidth;
-
-      container.scrollLeft = Math.max(container.scrollLeft - scrollAmount, 0);
-      checkScrollAvailability();
+    if (currentIndex === 1) {
+      scrollToState(0);
+      setCurrentIndex(0);
     }
   };
 
-  const checkScrollAvailability = () => {
+  const scrollToState = (state) => {
     if (containerRef.current) {
       const container = containerRef.current;
-      const maxScrollLeft = container.scrollWidth - container.clientWidth;
+      const firstItemWidth = container.children[0].offsetWidth;
+      const gap = parseFloat(getComputedStyle(container).gap) || 0;
 
-      setCanScrollNext(container.scrollLeft < maxScrollLeft);
-      setCanScrollPrev(container.scrollLeft > 0);
+      if (state === 1) {
+        // Состояние 1: часть первого элемента, полностью второй, третий, четвертый
+        const offset = firstItemWidth / 2 + gap;
+        container.scrollTo({
+          left: offset,
+          behavior: "smooth",
+        });
+      } else if (state === 0) {
+        // Состояние 0: исходное положение
+        container.scrollTo({
+          left: 0,
+          behavior: "smooth",
+        });
+      }
     }
   };
-
   useEffect(() => {
     const updateScreenSize = () => {
       setIsSmallScreen(window.innerWidth <= 768); // Проверяем ширину экрана
@@ -65,15 +66,6 @@ export default function Scroll() {
 
     return () => {
       window.removeEventListener("resize", updateScreenSize);
-    };
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("resize", checkScrollAvailability);
-    checkScrollAvailability();
-
-    return () => {
-      window.removeEventListener("resize", checkScrollAvailability);
     };
   }, []);
 
@@ -152,7 +144,7 @@ export default function Scroll() {
           variant="third"
           className={styles.but}
           onClick={handlePrev}
-          disabled={!canScrollPrev}
+          disabled={currentIndex === 0}
         >
           &#8592;
         </Button>
@@ -160,7 +152,7 @@ export default function Scroll() {
           variant="third"
           className={styles.but}
           onClick={handleNext}
-          disabled={!canScrollNext}
+          disabled={currentIndex === 1}
         >
           &#8594;
         </Button>
@@ -187,8 +179,8 @@ export default function Scroll() {
               className={styles.modal_img}
               src={
                 isSmallScreen
-                  ? `/img/Modals/${selectedImage}_mobile.jpg` // Для маленьких экранов
-                  : `/img/Modals/${selectedImage}.jpg` // Для больших экранов
+                  ? `/img/Modals/${selectedImage}_mobile.jpg`
+                  : `/img/Modals/${selectedImage}.jpg`
               }
               alt={selectedImage}
               width={isSmallScreen ? 768 : 1630}

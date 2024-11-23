@@ -48,7 +48,7 @@ export default function Recording() {
           >
             <Image
               className={styles.social_logo}
-              src={Telegram}
+              src={Vk}
               width={60}
               height={60}
               alt="link_vk"
@@ -62,7 +62,7 @@ export default function Recording() {
           >
             <Image
               className={styles.social_logo}
-              src={Vk}
+              src={Telegram}
               width={60}
               height={60}
               alt="link_telegram"

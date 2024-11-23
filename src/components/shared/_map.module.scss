@@ -12,7 +12,7 @@
 }
 .map_center {
   width: 1630px;
-  @media (min-width: 321px) and (max-width: 480px) {
+  @media (max-width: 1629px) {
     width: 100%;
     padding: 0 10px 0 10px;
     display: flex;
@@ -29,7 +29,7 @@
   border-radius: 32px;
   margin-top: 60px;
   filter: saturate(0.3);
-  @media (min-width: 321px) and (max-width: 480px) {
+  @media (max-width: 480px) {
     width: auto;
     height: 400px;
   }
