@@ -1,4 +1,4 @@
-import styles from "./More.module.scss";
+import styles from "./_more.module.scss";
 import classNames from "classnames";
 export default function Mixing() {
   return (
@@ -13,34 +13,28 @@ export default function Mixing() {
               С момента запуска нашего проекта мы накопили значительный опыт,
               который применяем для каждого нашего клиента.
             </p>
-            <h1 className={styles.title}>
-              МЫ{" "}
-              <span className={styles.music}>
-                <br />
-                МУЗЫКА
-              </span>
+            <h1 className={classNames(styles.title, styles.heading)}>
+              МЫ <span className={styles.music}>МУЗЫКА</span>
             </h1>
           </div>
           <div className={styles.side}>
             <div className={classNames(styles.container, styles.right_top)}>
               <p className={styles.desc_right}>
-                Студия помогает реализовать авторские
-                <br /> проекты, поддерживать идеи молодых и<br /> опытных
-                творцов, а также содействовать их продвижению.
+                Студия помогает реализовать авторские проекты, поддерживать идеи
+                молодых и опытных творцов, а также содействовать их продвижению.
               </p>
             </div>
             <div className={classNames(styles.container, styles.center)}>
               <p className={styles.desc_right}>
-                С 2018 года, предоставляет услуги записи
-                <br /> и звукорежиссуры для всех желающих в Норильске.
+                С 2018 года, предоставляет услуги записи и звукорежиссуры для
+                всех желающих в Норильске.
               </p>
             </div>
             <div className={classNames(styles.container, styles.bottom)}>
               {" "}
               <p className={styles.desc_right}>
-                Она стала местом силы и притяжения для
-                <br /> творческих людей в городе, объединяя их вокруг музыки и
-                искусства.
+                Она стала местом силы и притяжения для творческих людей в
+                городе, объединяя их вокруг музыки и искусства.
               </p>
             </div>
           </div>

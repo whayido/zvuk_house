@@ -1,11 +1,9 @@
-@use "../../styles/color.scss" as color;
-
 .footer {
   background-image: url("../../../public/img/Background/footer.jpg");
   height: auto;
   background-repeat: no-repeat;
   background-size: cover;
-  color: color.$white;
+  color: var(--white);
   white-space: nowrap;
   padding: 30px;
   width: 100%;
@@ -43,7 +41,7 @@
 
 .right {
   display: none;
-  @media screen and (min-width: 321px) and (max-width: 480px) {
+  @media (min-width: 321px) and (max-width: 480px) {
     display: none;
   }
 }
@@ -76,11 +74,11 @@
 .creators {
   text-wrap: nowrap;
   font-size: clamp(0.75rem, 0.65rem + 0.5vw, 1.25rem);
-  color: color.$hover;
+  color: var(--hover);
 }
 .version {
   font-size: clamp(0.75rem, 0.675rem + 0.375vw, 1.125rem);
-  color: color.$hover;
+  color: cvar(--hover);
 }
 
 .desc {
@@ -92,8 +90,8 @@
 }
 .social {
   text-decoration: underline;
-  color: color.$white;
-  background-color: transparent;
+  color: var(--white);
+  background-color: var(--none);
   transition: 0.3s;
   width: min-content;
   font-size: clamp(0.75rem, 0.6rem + 0.75vw, 1.5rem);
@@ -101,8 +99,8 @@
 
   &:hover {
     width: min-content;
-    background-color: color.$white;
-    color: color.$black;
+    background-color: var(--white);
+    color: var(--black);
     transition: 0.3s;
   }
 }
@@ -111,15 +109,15 @@
   font-family: "Babylonica", cursive;
   font-weight: 400;
   font-style: normal;
-  color: color.$white;
-  background-color: transparent;
+  color: var(--white);
+  background-color: var(--none);
   transition: 0.3s;
   width: min-content;
   font-size: clamp(0.75rem, 0.5rem + 1.25vw, 2rem);
   &:hover {
     width: min-content;
-    background-color: color.$white;
-    color: color.$black;
+    background-color: var(--white);
+    color: var(--black);
     transition: 0.3s;
   }
 }
@@ -128,15 +126,15 @@
   font-family: "Nova Cut", system-ui;
   font-weight: 400;
   font-style: normal;
-  color: color.$white;
-  background-color: transparent;
+  color: var(--white);
+  background-color: var(--none);
   transition: 0.3s;
   width: min-content;
   font-size: clamp(0.75rem, 0.625rem + 0.625vw, 1.375rem);
   &:hover {
     width: min-content;
-    background-color: color.$white;
-    color: color.$black;
+    background-color: var(--white);
+    color: var(--black);
     transition: 0.3s;
   }
 }
@@ -151,7 +149,7 @@
 }
 
 .social_logo {
-  @media screen and (min-width: 321px) and (max-width: 480px) {
+  @media (min-width: 321px) and (max-width: 480px) {
     width: 48px;
     height: auto;
   }
@@ -159,7 +157,7 @@
 
 .logo {
   object-fit: fill;
-  @media screen and (min-width: 321px) and (max-width: 480px) {
+  @media (min-width: 321px) and (max-width: 480px) {
     width: 48px;
     height: auto;
   }

@@ -1,7 +1,6 @@
-import styles from "./not-found.module.scss";
 import Button from "../components/ui/button";
 import Link from "next/link";
-
+import styles from "./not-found.module.scss";
 export default function NotFound() {
   return (
     <section className={styles.main}>

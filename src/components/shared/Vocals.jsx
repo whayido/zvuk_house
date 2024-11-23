@@ -1,4 +1,4 @@
-import styles from "./Vocals.module.scss";
+import styles from "./_vocals.module.scss";
 import Image from "next/image";
 import classNames from "classnames";
 import Vk from "../../../public/img/Logo/vk.svg";
@@ -11,29 +11,24 @@ export default function Mixing() {
         <div className={styles.side}>
           <div className={styles.text}>
             <p className={styles.desc}>
-              Студия звукозаписи Звук Хаус приглашает
-              <br /> всех, кто мечтает овладеть искусством вокала, на
-              профессиональные уроки.
+              Студия звукозаписи Звук Хаус приглашает всех, кто мечтает овладеть
+              искусством вокала, на профессиональные уроки.
             </p>
             <p className={classNames(styles.desc, styles.right)}>
-              Мы предлагаем индивидуальные занятия,
-              <br /> которые помогут вам раскрыть свой голос, научиться
-              правильно петь и создавать качественные вокальные записи.
+              Мы предлагаем индивидуальные занятия, которые помогут вам раскрыть
+              свой голос, научиться правильно петь и создавать качественные
+              вокальные записи.
             </p>
           </div>
           <div className={styles.money}>
-            <p className={styles.price}>
-              КУРС 9000<span className={styles.price}>рублей</span>
-            </p>
+            <span className={classNames(styles.price, styles.white)}>курс</span>
+            <p className={classNames(styles.price, styles.number)}>9000</p>
+
+            <span className={classNames(styles.price, styles.white)}>
+              рублей
+            </span>
           </div>
         </div>
-        {/*    <dt>
-          <dd></dd>
-          <dd></dd>
-          <dd></dd>
-          <dd></dd>
-          <dd></dd>
-        </dt> */}
 
         <p className={styles.desc}>Преимущества:</p>
         <ul className={styles.list}>
@@ -51,7 +46,13 @@ export default function Mixing() {
             href="https://m.vk.com/zvukxouse"
             target="_blank"
           >
-            <Image src={Telegram} width={60} height={60} alt="link_vk"></Image>
+            <Image
+              className={styles.social_logo}
+              src={Telegram}
+              width={60}
+              height={60}
+              alt="link_vk"
+            ></Image>
           </a>
 
           <a
@@ -59,7 +60,13 @@ export default function Mixing() {
             href="https://t.me/dimawert"
             target="_blank"
           >
-            <Image src={Vk} width={60} height={60} alt="link_telegram"></Image>
+            <Image
+              className={styles.social_logo}
+              src={Vk}
+              width={60}
+              height={60}
+              alt="link_telegram"
+            ></Image>
           </a>
           <a
             href="tel:+7(913) 530-57-90"

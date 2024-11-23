@@ -1,4 +1,4 @@
-import styles from "./Rec.module.scss";
+import styles from "./_rec.module.scss";
 import Image from "next/image";
 import classNames from "classnames";
 import Vk from "../../../public/img/Logo/vk.svg";
@@ -11,38 +11,24 @@ export default function Recording() {
         <div className={styles.side}>
           <div className={styles.text}>
             <p className={styles.desc}>
-              Студия звукозаписи Звук Хаус предлагает
-              <br /> услуги профессиональной записи песен
-              <br /> в высококачественных условиях.
+              Студия звукозаписи Звук Хаус предлагает услуги профессиональной
+              записи песен в высококачественных условиях.
             </p>
             <p className={classNames(styles.desc, styles.right)}>
-              Независимо от уровня вашего опыта, здесь
-              <br /> помогут воплотить ваши музыкальные идеи в жизнь.
+              Независимо от уровня вашего опыта, здесь помогут воплотить ваши
+              музыкальные идеи в жизнь.
             </p>
           </div>
           <div className={styles.money}>
-            <p className={classNames(styles.price, styles.number)}>
-              1000
-              <br />
-              <span className={classNames(styles.price, styles.white)}>
-                рублей
-              </span>
-              <span className={classNames(styles.price, styles.white)}>
-                час
-              </span>
-            </p>
+            <p className={classNames(styles.price, styles.number)}>1000</p>
+            <span className={classNames(styles.price, styles.white)}>
+              рублей
+            </span>
+            <span className={classNames(styles.price, styles.white)}>час</span>
           </div>
         </div>
-
-        {/*  <dt>
-          <dd></dd>
-          <dd></dd>
-          <dd></dd>
-          <dd></dd>
-          <dd></dd>
-        </dt> */}
+        <p className={styles.desc}>Преимущества:</p>
         <ul className={styles.list}>
-          <p className={styles.desc}>Преимущества:</p>
           <li className={styles.desc_li}>
             Индивидуальный подход к каждому клиенту.
           </li>
@@ -60,7 +46,13 @@ export default function Recording() {
             href="https://m.vk.com/zvukxouse"
             target="_blank"
           >
-            <Image src={Telegram} width={60} height={60} alt="link_vk"></Image>
+            <Image
+              className={styles.social_logo}
+              src={Telegram}
+              width={60}
+              height={60}
+              alt="link_vk"
+            ></Image>
           </a>
 
           <a
@@ -68,7 +60,13 @@ export default function Recording() {
             href="https://t.me/dimawert"
             target="_blank"
           >
-            <Image src={Vk} width={60} height={60} alt="link_telegram"></Image>
+            <Image
+              className={styles.social_logo}
+              src={Vk}
+              width={60}
+              height={60}
+              alt="link_telegram"
+            ></Image>
           </a>
           <a
             href="tel:+7(913) 530-57-90"

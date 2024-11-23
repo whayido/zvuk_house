@@ -1,23 +1,28 @@
-@use "../../styles/color.scss" as color;
 .hero {
   max-width: 1630px;
-  background-color: color.$white;
-  @media screen and (min-width: 321px) and (max-width: 768px) {
+  background-color: var(--white);
+  @media (max-width: 768px) {
     width: 100%;
     padding: 10px 10px 0 10px;
+  }
+  @media (min-width: 769px) and (max-width: 1700px) {
+    width: 100%;
+    padding: 40px 40px 0 40px;
   }
 }
 
 .title {
-  /* font-size: 270px; */
   font-size: clamp(6rem, 3.825rem + 10.875vw, 16.875rem);
   font-weight: 800;
   text-wrap: nowrap;
   text-align: center;
 
-  @media screen and (min-width: 321px) and (max-width: 768px) {
+  @media (max-width: 768px) {
     line-height: 1;
     text-wrap: wrap;
+  }
+  @media (min-width: 769px) and (max-width: 1280px) {
+    font-size: clamp(7rem, -0.524rem + 15.656vw, 12rem);
   }
 }
 .house {
@@ -25,32 +30,18 @@
   justify-content: center;
   align-items: center;
   font-weight: 800;
-  width: 775px;
+  width: min-content;
   line-height: 0.65;
-
-  background-color: color.$black;
-  color: color.$white;
-
-  @media screen and (min-width: 321px) and (max-width: 390px) {
-    width: 290px;
-    line-height: 0.7;
-  }
-  @media screen and (min-width: 391px) and (max-width: 480px) {
-    width: 320px;
-    line-height: 0.7;
-  }
-  @media screen and (min-width: 481px) and (max-width: 768px) {
-    width: 420px;
-    line-height: 0.7;
-  }
+  background-color: var(--black);
+  color: var(--white);
 }
 
 .desc {
   font-weight: 800;
   font-size: clamp(1rem, 0.8rem + 1vw, 2rem);
   .mark {
-    color: color.$white;
-    background-color: color.$black;
+    color: var(--white);
+    background-color: var(--black);
   }
 }
 
@@ -58,7 +49,7 @@
   border-top-left-radius: 32px;
   border-top-right-radius: 32px;
   object-fit: fill;
-
+  height: auto;
   width: 100%;
   filter: grayscale(100%);
   -webkit-transition: all 0.5s ease-in;
@@ -71,9 +62,6 @@
     -o-transition: all 0.5s ease-in;
     transition: all 0.5s ease-in;
     filter: grayscale(0);
-  }
-  @media screen and (min-width: 321px) and (max-width: 768px) {
-    height: auto;
   }
 }
 
@@ -88,11 +76,12 @@
   justify-content: center;
   align-items: center;
   z-index: 999;
+  @media (max-width: 769px) {
+    padding: 20px;
+  }
 }
 
 .modal_content {
-  padding: 20px;
-  border-radius: 10px;
   position: relative;
 }
 
@@ -100,14 +89,14 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  background: none;
-  border: 3px solid color.$white;
+  background-color: var(--none);
+  border: 3px solid var(--white);
   border-radius: 16px;
   padding: 10px;
   width: 60px;
   height: 60px;
-  color: color.$white;
-  font-size: 60px;
+  color: var(--white);
+  font-size: clamp(2rem, 1.65rem + 1.75vw, 3.75rem);
   cursor: pointer;
   z-index: 1000;
   display: flex;
@@ -116,6 +105,15 @@
   transition: 0.3s;
   &:hover {
     transition: 0.3s;
-    transform: scale(0.9);
+    color: var(--black);
+    background-color: var(--white);
+  }
+  @media (min-width: 769px) and (max-width: 1199px) {
+    width: 40px;
+    height: 40px;
+    padding: 7px;
+  }
+  @media (max-width: 768px) {
+    display: none;
   }
 }

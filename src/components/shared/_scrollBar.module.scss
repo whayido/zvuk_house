@@ -1,6 +1,10 @@
 .os-scrollbar {
   background-color: rgba(0, 0, 0, 0.1);
   width: 20px;
+  /*   @media (max-width: 768px) {
+    width: 4px;
+    height: 70px;
+  } */
 }
 
 .os-scrollbar-handle {

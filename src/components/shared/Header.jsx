@@ -1,6 +1,6 @@
 "use client";
+import styles from "./_header.module.scss";
 import { useState } from "react";
-import styles from "./Header.module.scss";
 import Button from "../ui/button";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

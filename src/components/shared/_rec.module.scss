@@ -1,0 +1,123 @@
+.content {
+  background: #191919;
+  padding: 45px 80px 45px 80px;
+  color: var(--white);
+  border-radius: 26px;
+  width: 1630px;
+  @media (max-width: 1630px) {
+    width: auto;
+  }
+  @media (max-width: 999px) {
+    padding: 40px 20px 40px 20px;
+  }
+  @media (max-width: 767px) {
+    padding: 20px;
+  }
+}
+.title {
+  font-size: clamp(1.5rem, 1.05rem + 2.25vw, 3.75rem);
+  font-weight: 800;
+}
+.desc {
+  font-size: clamp(1rem, 0.85rem + 0.75vw, 1.75rem);
+  font-weight: 400;
+}
+.desc_li {
+  list-style: disc;
+  font-size: clamp(1rem, 0.925rem + 0.375vw, 1.375rem);
+  color: var(--white);
+}
+.price {
+  background-color: var(--white);
+  width: auto;
+  color: var(--black);
+  font-weight: 800;
+  font-size: clamp(1rem, 0.2rem + 4vw, 5rem);
+  border-radius: 30px;
+  height: auto;
+  padding: 5px 20px 5px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 767px) {
+    padding: 5px 10px 5px 10px;
+    border-radius: 16px;
+  }
+}
+.white {
+  background-color: var(--black);
+  border: 3px solid var(--white);
+  color: var(--white);
+  @media (max-width: 767px) {
+    border: 1px solid var(--white);
+  }
+}
+.list {
+  padding: 20px 40px 20px 40px;
+  border-radius: 30px;
+  border: 3px solid var(--white);
+  @media (max-width: 767px) {
+    border-radius: 20px;
+    padding: 10px 20px 10px 30px;
+    border: 1px solid var(--white);
+    margin-top: 4px;
+  }
+}
+.link_social {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  justify-content: flex-end;
+  align-items: center;
+  @media (max-width: 767px) {
+    gap: 20px;
+  }
+}
+.side {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  @media (max-width: 999px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
+.right {
+  text-align: right;
+}
+.money {
+  width: fit-content;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 20px;
+  @media (max-width: 767px) {
+    gap: 10px;
+  }
+}
+.text {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  @media (max-width: 767px) {
+    gap: 10px;
+  }
+}
+.number {
+  font-size: clamp(2rem, -0.35rem + 11.75vw, 13.75rem);
+  height: min-content;
+  line-height: 0.9;
+}
+.phone {
+  font-size: clamp(0.75rem, 0.35rem + 2vw, 2.75rem);
+}
+.social_logo {
+  @media (min-width: 321px) and (max-width: 480px) {
+    width: 40px;
+    height: auto;
+  }
+}

@@ -1,6 +1,16 @@
-@use "null.scss";
-@use "color.scss";
-@use "global.scss" as *;
+@use "./null";
+@use "./fonts";
+@use "./colors";
+@use "./decoration";
+
+@use "sass:math";
+@function rem($pixel) {
+  @if math.is-unitless($pixel) {
+    @return math.div($pixel, 16) + rem;
+  } @else {
+    @error 'rem(numbers)';
+  }
+}
 @import "overlayscrollbars/overlayscrollbars.css";
 
 * {
@@ -8,8 +18,8 @@
 }
 
 ::selection {
-  background: color.$black;
-  color: color.$white;
+  background: var(--black);
+  color: var(--white);
 }
 ::-webkit-scrollbar {
   display: none;

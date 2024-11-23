@@ -1,7 +1,6 @@
-@use "../../styles/color.scss" as color;
 .map {
   width: 100%;
-  background-color: color.$black;
+  background-color: var(--black);
   background-image: url("../../../public/img/Background/content.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -13,7 +12,7 @@
 }
 .map_center {
   width: 1630px;
-  @media screen and (min-width: 321px) and (max-width: 480px) {
+  @media (min-width: 321px) and (max-width: 480px) {
     width: 100%;
     padding: 0 10px 0 10px;
     display: flex;
@@ -30,7 +29,7 @@
   border-radius: 32px;
   margin-top: 60px;
   filter: saturate(0.3);
-  @media screen and (min-width: 321px) and (max-width: 480px) {
+  @media (min-width: 321px) and (max-width: 480px) {
     width: auto;
     height: 400px;
   }
@@ -38,14 +37,22 @@
 .desc {
   font-weight: 800;
   font-size: clamp(0.625rem, 0.35rem + 1.375vw, 2rem);
+  transition: 0.3s;
+  background-color: var(--none);
+  height: fit-content;
+  &:hover {
+    transition: 0.3s;
+    color: var(--black);
+    background-color: var(--white);
+  }
 }
 .link_map {
-  color: color.$black;
-  background-color: color.$white;
+  color: var(--black);
+  background-color: var(--white);
   padding: 3px 5px 3px 5px;
 }
 .address {
-  color: color.$white;
+  color: var(--white);
   font-size: clamp(0.625rem, 0.35rem + 1.375vw, 2rem);
   position: relative;
   float: right;
@@ -57,8 +64,8 @@
   align-items: center;
   font-size: clamp(2.5rem, 2rem + 2.5vw, 5rem);
   font-weight: 800;
-  background-color: color.$white;
-  color: color.$black;
+  background-color: var(--white);
+  color: var(--black);
   white-space: nowrap;
   line-height: 1;
 }

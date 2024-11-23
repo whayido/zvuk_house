@@ -1,8 +1,6 @@
-@use "../../styles/color.scss";
-
 .primary {
   font-size: clamp(1.25rem, 1rem + 1.25vw, 2.5rem);
-  border: 3px solid color.$black;
+  border: 3px solid var(--black);
   cursor: pointer;
   font-weight: 500;
   border-radius: 32px;
@@ -10,26 +8,27 @@
   padding-left: 15px;
   padding-right: 15px;
   transition: 0.3s;
-  background-color: color.$black;
-  color: color.$white;
+  background-color: var(--black);
+  color: var(--white);
   position: relative;
   float: right;
   margin: 20px 0 20px 0;
   z-index: 20;
   &:hover {
     transition: 0.3s;
-    background-color: color.$white;
-    color: color.$black;
+    background-color: var(--white);
+    color: var(--black);
   }
-  @media screen and (min-width: 321px) and (max-width: 768px) {
-    border: 1px solid color.$black;
+  @media (max-width: 768px) {
+    border: 1px solid var(--black);
     padding: 5px 15px 5px 15px;
+    margin: 10px 0 10px 0;
   }
 }
 
 .secondary {
   font-size: clamp(1.25rem, 1.1rem + 0.75vw, 2rem);
-  border: 2px solid color.$white;
+  border: 2px solid var(--white);
   cursor: pointer;
   font-weight: 500;
   border-radius: 32px;
@@ -37,23 +36,21 @@
   padding-left: 15px;
   padding-right: 15px;
   transition: 0.3s;
-  background-color: color.$none;
-  color: color.$white;
-  grid-column: 6 / 6;
-  grid-row: 5 / 5;
+  background-color: var(--none);
+  color: var(--white);
   &:hover {
     transition: 0.3s;
-    background-color: color.$white;
-    color: color.$black;
+    background-color: var(--white);
+    color: var(--black);
   }
-  @media screen and (min-width: 321px) and (max-width: 768px) {
-    border: 2px solid color.$white;
-    padding: 3px 10px 3px 10px;
+  @media (max-width: 768px) {
+    border: 2px solid var(--white);
+    padding: 3px 7px 3px 7px;
   }
 }
 .third {
   font-size: clamp(1.25rem, 1.1rem + 0.75vw, 2rem);
-  border: 2px solid color.$white;
+  border: 2px solid var(--white);
   cursor: pointer;
   font-weight: 500;
   border-radius: 50%;
@@ -66,14 +63,15 @@
   padding-left: 10px;
   padding-right: 10px;
   transition: 0.3s;
-  background-color: color.$black;
-  color: color.$white;
+  background-color: var(--black);
+  color: var(--white);
   &:hover {
     transition: 0.3s;
-    background-color: color.$white;
-    color: color.$black;
+    background-color: var(--white);
+    color: var(--black);
   }
 }
+
 .backToTop {
   display: flex;
   justify-content: center;
@@ -81,146 +79,16 @@
   cursor: pointer;
   font-size: 60px;
   padding: 10px;
-  color: color.$white;
-  border: 2px solid color.$white;
+  color: var(--white);
+  border: 2px solid var(--white);
   border-radius: 16px;
-  background-color: color.$none;
+  background-color: var(--none);
   transition: background-color 0.3s, color 0.3s;
   width: 70px;
   height: 70px;
   &:hover {
     transition: background-color 0.3s, color 0.3s;
-    background-color: color.$white;
-    color: color.$black;
+    background-color: var(--white);
+    color: var(--black);
   }
 }
-/* @media screen and (max-width: 320px) {
-}
-@media screen and (max-width: 390px) {
-  .primary {
-    font-size: 16px;
-    border: 2px solid color.$black;
-    border-radius: 32px;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin: 20px 0 20px 0;
-  }
-}
-@media screen and (max-width: 480px) {
-  .primary {
-    font-size: 24px;
-    border: 2px solid color.$black;
-    cursor: pointer;
-    font-weight: 500;
-    border-radius: 32px;
-    width: max-content;
-    padding-left: 15px;
-    padding-right: 15px;
-    transition: 0.3s;
-    background-color: color.$black;
-    color: color.$white;
-    position: relative;
-    float: right;
-    margin: 20px 0 20px 0;
-
-    &:hover {
-      transition: 0.3s;
-      background-color: color.$white;
-      color: color.$black;
-    }
-  }
-  .secondary {
-    font-size: 24px;
-    border: 2px solid color.$white;
-    cursor: pointer;
-    font-weight: 500;
-    border-radius: 32px;
-    width: max-content;
-    padding-left: 15px;
-    padding-right: 15px;
-    transition: 0.3s;
-    color: color.$white;
-    grid-column: 6 / 6;
-    grid-row: 5 / 5;
-    &:hover {
-      transition: 0.3s;
-      background-color: color.$white;
-      color: color.$black;
-    }
-  }
-}
-@media screen and (max-width: 768px) {
-}
-@media screen and (max-width: 1000) {
-}
-@media (max-width: 1280px) {
-  .primary {
-    font-size: 32px;
-    border: 2px solid color.$black;
-    cursor: pointer;
-    font-weight: 500;
-    border-radius: 32px;
-    width: max-content;
-    padding-left: 15px;
-    padding-right: 15px;
-    transition: 0.3s;
-    background-color: color.$black;
-    color: color.$white;
-    position: relative;
-    float: right;
-    margin: 20px 0 20px 0;
-
-    &:hover {
-      transition: 0.3s;
-      background-color: color.$white;
-      color: color.$black;
-    }
-  }
-
-  .secondary {
-    font-size: 28px;
-    border: 2px solid color.$white;
-    cursor: pointer;
-    font-weight: 500;
-    border-radius: 32px;
-    width: max-content;
-    padding-left: 15px;
-    padding-right: 15px;
-    transition: 0.3s;
-    background-color: color.$black;
-    color: color.$white;
-    grid-column: 6 / 6;
-    grid-row: 5 / 5;
-    &:hover {
-      transition: 0.3s;
-      background-color: color.$white;
-      color: color.$black;
-    }
-  }
-  .third {
-    font-size: 28px;
-    border: 2px solid color.$white;
-    cursor: pointer;
-    font-weight: 500;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 10px;
-    padding-right: 10px;
-    transition: 0.3s;
-    background-color: color.$black;
-    color: color.$white;
-    &:hover {
-      transition: 0.3s;
-      background-color: color.$white;
-      color: color.$black;
-    }
-  }
-}
-@media screen and (min-width: 1440px) {
-}
- */

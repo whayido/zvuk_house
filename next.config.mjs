@@ -2,6 +2,9 @@ import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  /*  experimental: {
+    optimizePackageImports: true,
+  }, */
   output: "export",
   /* basePath: "/zvuk_house", */
   images: { unoptimized: true },

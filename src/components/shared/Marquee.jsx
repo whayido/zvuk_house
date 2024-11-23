@@ -1,6 +1,6 @@
-import styles from "./Marquee.module.scss";
 import Link from "next/link";
-
+import styles from "./_marquee.module.scss";
+/* import Marquee from "react-fast-marquee"; */
 const items = [
   { id: 1, href: "#сведение", text: "СВЕДЕНИЕ И МИКС" },
   { id: 2, href: "#вокал", text: "УРОКИ ВОКАЛА" },
@@ -17,8 +17,60 @@ const generateItems = (items, times) => {
 
 const doubleItems = generateItems(items, 9);
 
-const Marquee = () => {
+const MarqueeComp = () => {
   return (
+    /*   <Marquee speed={30}>
+      <nav className={styles.marquee}>
+        <ul className={styles.carousel}>
+          <li className={styles.carousel_item}>
+            <Link href="/" className={styles.carousel_link}>
+              УРОКИ ВОКАЛА
+            </Link>
+          </li>
+          <li className={styles.carousel_item}>
+            <Link href="/" className={styles.carousel_link}>
+              ЗАПИСЬ
+            </Link>
+          </li>
+          <li className={styles.carousel_item}>
+            <Link href="/" className={styles.carousel_link}>
+              МИКС И СВЕДЕНИЕ
+            </Link>
+          </li>
+          <li className={styles.carousel_item}>
+            <Link href="/" className={styles.carousel_link}>
+              УРОКИ ВОКАЛА
+            </Link>
+          </li>
+          <li className={styles.carousel_item}>
+            <Link href="/" className={styles.carousel_link}>
+              ЗАПИСЬ
+            </Link>
+          </li>
+          <li className={styles.carousel_item}>
+            <Link href="/" className={styles.carousel_link}>
+              МИКС И СВЕДЕНИЕ
+            </Link>
+          </li>
+          <li className={styles.carousel_item}>
+            <Link href="/" className={styles.carousel_link}>
+              УРОКИ ВОКАЛА
+            </Link>
+          </li>
+          <li className={styles.carousel_item}>
+            <Link href="/" className={styles.carousel_link}>
+              ЗАПИСЬ
+            </Link>
+          </li>
+          <li className={styles.carousel_item}>
+            <Link href="/" className={styles.carousel_link}>
+              МИКС И СВЕДЕНИЕ
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </Marquee> */
+
     <nav className={styles.marquee}>
       <ul className={styles.carousel}>
         {doubleItems.map((item, index) => (
@@ -42,4 +94,4 @@ const Marquee = () => {
   );
 };
 
-export default Marquee;
+export default MarqueeComp;

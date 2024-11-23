@@ -1,0 +1,123 @@
+.content {
+  background: #191919;
+  background-image: url("../../../public/img/Background/more.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 80px;
+  color: var(--white);
+  border-radius: 26px;
+  width: 1630px;
+  @media (max-width: 1630px) {
+    width: auto;
+  }
+  @media (max-width: 1024px) {
+    padding: 10px;
+  }
+  @media (min-width: 1025px) and (max-width: 1199px) {
+    padding: 60px;
+  }
+}
+.title {
+  font-size: clamp(1.25rem, 0.5rem + 3.75vw, 5rem);
+  font-weight: 800;
+  text-align: center;
+  white-space: nowrap;
+}
+.heading {
+  white-space: wrap;
+}
+
+.house {
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  width: 305px;
+  line-height: 0.65;
+  background-color: var(--black);
+  color: var(--white);
+}
+.desc {
+  font-weight: 700;
+
+  font-size: clamp(0.875rem, 0.65rem + 1.125vw, 2rem);
+  text-align: center;
+}
+.desc_right {
+  font-weight: 700;
+  font-size: clamp(0.875rem, 0.65rem + 1.125vw, 2rem);
+  text-align: left;
+}
+
+.music {
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  width: 305px;
+  line-height: 0.1;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.left {
+  padding: 20px 30px 20px 30px;
+  background-color: var(--white);
+  border-radius: 32px;
+  height: auto;
+  width: min-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(0rem, -0.478rem + 1.961vw, 1.875rem);
+  color: var(--black);
+  @media (max-width: 999px) {
+    width: fit-content;
+    gap: 10px;
+    border-radius: 20px;
+    padding: 14px;
+  }
+  @media (max-width: 769px) {
+    gap: 1px;
+  }
+}
+.container {
+  font-weight: 700;
+  padding: 30px;
+  background-color: var(--white);
+  border-radius: 32px;
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--black);
+  @media (max-width: 999px) {
+    border-radius: 20px;
+    padding: 14px;
+  }
+}
+.aside {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  @media (max-width: 999px) {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.side {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  @media (max-width: 999px) {
+    gap: 10px;
+  }
+}

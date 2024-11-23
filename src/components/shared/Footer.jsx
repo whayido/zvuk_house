@@ -1,8 +1,8 @@
-import styles from "./Footer.module.scss";
 import Image from "next/image";
 import packageJson from "../../../package.json";
 import classNames from "classnames";
 import BackToTop from "../ui/BackToTop";
+import styles from "./_footer.module.scss";
 const Footer = () => {
   return (
     <>

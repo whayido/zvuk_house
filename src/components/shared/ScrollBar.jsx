@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useRef } from "react";
-import { OverlayScrollbars } from "overlayscrollbars"; // Импорт как именованный
-import styles from "./ScrollBar.module.scss";
+import { OverlayScrollbars } from "overlayscrollbars";
 import "overlayscrollbars/overlayscrollbars.css";
+import styles from "./_scrollBar.module.scss";
 
 const ScrollBar = ({ children }) => {
   const scrollRef = useRef(null);

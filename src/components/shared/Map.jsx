@@ -1,6 +1,7 @@
 "use client";
-import styles from "./Map.module.scss";
 import { useEffect } from "react";
+import styles from "./_map.module.scss";
+
 export default function Map() {
   useEffect(() => {
     (function (e, t) {

@@ -1,13 +1,16 @@
 "use client";
 import Image from "next/image";
-import styles from "./Wrapper.module.scss";
-import { useState, useEffect } from "react";
+import styles from "./_wrapper.module.scss";
+import { useState, useEffect, useRef } from "react";
 import Button from "../ui/button";
 
 export default function Scroll() {
   const [isModalOpen, setModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [canScrollNext, setCanScrollNext] = useState(true);
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(false); // Определяем текущий размер экрана
+  const containerRef = useRef(null);
 
   const handleClick = (image) => {
     setSelectedImage(image);
@@ -19,16 +22,60 @@ export default function Scroll() {
   };
 
   const handleNext = () => {
-    if (currentIndex < 1) {
-      setCurrentIndex(currentIndex + 1);
+    if (containerRef.current) {
+      const container = containerRef.current;
+      const scrollAmount = container.clientWidth;
+      const maxScrollLeft = container.scrollWidth - container.clientWidth;
+
+      container.scrollLeft = Math.min(
+        container.scrollLeft + scrollAmount,
+        maxScrollLeft
+      );
+      checkScrollAvailability();
     }
   };
 
   const handlePrev = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
+    if (containerRef.current) {
+      const container = containerRef.current;
+      const scrollAmount = container.clientWidth;
+
+      container.scrollLeft = Math.max(container.scrollLeft - scrollAmount, 0);
+      checkScrollAvailability();
     }
   };
+
+  const checkScrollAvailability = () => {
+    if (containerRef.current) {
+      const container = containerRef.current;
+      const maxScrollLeft = container.scrollWidth - container.clientWidth;
+
+      setCanScrollNext(container.scrollLeft < maxScrollLeft);
+      setCanScrollPrev(container.scrollLeft > 0);
+    }
+  };
+
+  useEffect(() => {
+    const updateScreenSize = () => {
+      setIsSmallScreen(window.innerWidth <= 768); // Проверяем ширину экрана
+    };
+
+    window.addEventListener("resize", updateScreenSize);
+    updateScreenSize();
+
+    return () => {
+      window.removeEventListener("resize", updateScreenSize);
+    };
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("resize", checkScrollAvailability);
+    checkScrollAvailability();
+
+    return () => {
+      window.removeEventListener("resize", checkScrollAvailability);
+    };
+  }, []);
 
   useEffect(() => {
     if (isModalOpen) {
@@ -44,7 +91,7 @@ export default function Scroll() {
   return (
     <>
       <section className={styles.wrapper}>
-        <ul className={styles.container}>
+        <ul className={styles.container} ref={containerRef}>
           <li
             className={styles.container_item}
             onClick={() => handleClick("call")}
@@ -105,7 +152,7 @@ export default function Scroll() {
           variant="third"
           className={styles.but}
           onClick={handlePrev}
-          disabled={currentIndex === 0}
+          disabled={!canScrollPrev}
         >
           &#8592;
         </Button>
@@ -113,7 +160,7 @@ export default function Scroll() {
           variant="third"
           className={styles.but}
           onClick={handleNext}
-          disabled={currentIndex === 1}
+          disabled={!canScrollNext}
         >
           &#8594;
         </Button>
@@ -133,15 +180,19 @@ export default function Scroll() {
             className={styles.closeButton}
             onClick={handleCloseModal}
           >
-            &#10005;
+            &times;
           </Button>
           <figure className={styles.modal_content}>
             <Image
               className={styles.modal_img}
-              src={`/img/Modals/${selectedImage}.jpg`}
+              src={
+                isSmallScreen
+                  ? `/img/Modals/${selectedImage}_mobile.jpg` // Для маленьких экранов
+                  : `/img/Modals/${selectedImage}.jpg` // Для больших экранов
+              }
               alt={selectedImage}
-              width={1630}
-              height={820}
+              width={isSmallScreen ? 768 : 1630}
+              height={isSmallScreen ? 400 : 820}
             />
           </figure>
         </aside>

@@ -1,8 +1,8 @@
 "use client";
-import styles from "./Hero.module.scss";
+import Marquee from "../../components/shared/Marquee";
+import styles from "./_hero.module.scss";
 import Image from "next/image";
 import Studio from "../../../public/img/Content/studio.JPG";
-import Marquee from "../../components/shared/Marquee";
 import Button from "../../components/ui/button";
 import More from "../../components/shared/More";
 import { useState } from "react";
